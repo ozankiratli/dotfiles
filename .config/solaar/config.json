@@ -1,0 +1,23 @@
+{
+  "405E:A7D705A7": {
+    "_name": "M720 Triathlon",
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "pointer_speed": 256
+  },
+  "405E:D3094032": {
+    "_name": "M720 Triathlon Multi-Device Mouse",
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": true,
+    "pointer_speed": 256
+  },
+  "408A:1EC833E0": {
+    "_name": "MX Keys Wireless Keyboard",
+    "fn-swap": false
+  },
+  "408A:F9C49D6A": {
+    "_name": "MX Keys Wireless Keyboard",
+    "fn-swap": false
+  },
+  "_version": "1.0.1"
+}

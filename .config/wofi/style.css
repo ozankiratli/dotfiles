@@ -1,0 +1,45 @@
+* {
+  font-family: Acme;
+}
+
+
+#input {
+  border: none;
+  border-radius: 0px;
+  color: #f57900;
+  background-color: #0e2946;
+}
+
+#text {
+  margin-left: 1em;
+  color: #ab5400;
+}
+
+window {
+  opacity: 0.9;
+  border: 2px solid #2e3440;
+  background-color: #000E1A;
+  color: #bbbbbb;
+  border-radius: 5px;
+}
+
+#inner-box {
+  margin: 5px;
+  border: none;
+  background-color: #0e2946;
+}
+
+#outer-box {
+  margin: 5px;
+  border: none;
+  background-color: #0e2946;
+}
+
+#entry:selected {
+  background-color: #0e2946;
+}
+
+#selected {
+  background-color: #add5ff;
+}
+

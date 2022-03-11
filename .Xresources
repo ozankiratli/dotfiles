@@ -1,0 +1,8 @@
+Xft.antialias: true
+Xft.hiting: true
+Xft.rgba: rgba
+Xft.hintstyle: hintfull
+Xft.dpi: 220
+Xcursor.theme: Oxygen 02 Vibrant Orange
+URxvt.font: xft:Hack:size=6
+
