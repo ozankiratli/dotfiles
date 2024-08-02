@@ -1,0 +1,9 @@
+%YAML 1.3
+---
+- Rule:
+  - Key: [Brightness Down, pressed]
+  - Execute: [/usr/local/bin/backlight, d]
+- Rule:
+  - Key: [Brightness Up, pressed]
+  - Execute: [/usr/local/bin/backlight, u]
+...

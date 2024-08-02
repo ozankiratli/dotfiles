@@ -37,7 +37,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -61,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git ubuntu systemd pip dotenv timer)
+plugins=(git ubuntu systemd pip dotenv timer conda-zsh-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,10 @@ zstyle :omz:plugins:ssh-agent identities
 
 alias openPaper=". openPaper"
 alias WritingDirectory=". WritingDirectory"
+#alias initStream="~/.stream/initStream.sh"
+#alias browser="GDK_BACKEND=x11 surf -z1.9"
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -115,4 +119,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+conda deactivate
 
+
+#echo "To activate conda use: conda activate"
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/gems/gems/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"

@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "\"terminal.integrated.fontFamily\" : \"Hack Nerd Font Mono\""
+    ],
+    "workbench.settings.applyToAllProfiles": [
+        "terminal.integrated.commandsToSkipShell",
+        "editor.fontFamily"
+    ],
+    "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace"
+}

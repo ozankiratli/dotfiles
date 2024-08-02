@@ -1,0 +1,3 @@
+#!/bin/bash
+
+signal-desktop --ozone-platform=wayland --use-gl=angle --enable-features=VaapiVideoEncoder,RawDraw,Vulkan

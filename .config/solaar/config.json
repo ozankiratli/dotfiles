@@ -6,18 +6,82 @@
     "pointer_speed": 256
   },
   "405E:D3094032": {
+    "_modelId": "B015405E0000",
     "_name": "M720 Triathlon Multi-Device Mouse",
+    "_serial": "D3094032",
+    "_unitId": "67B7F0A5",
+    "divert-keys": {
+      "208": 0,
+      "82": 0,
+      "83": 0,
+      "86": 0,
+      "91": 0,
+      "93": 0
+    },
     "hires-smooth-invert": false,
     "hires-smooth-resolution": true,
-    "pointer_speed": 256
+    "mouse-gestures": 0,
+    "pointer_speed": 256,
+    "reprogrammable-keys": {
+      "208": 208,
+      "80": 80,
+      "81": 81,
+      "82": 82,
+      "83": 83,
+      "86": 86,
+      "91": 91,
+      "93": 93
+    }
   },
   "408A:1EC833E0": {
-    "_name": "MX Keys Wireless Keyboard",
-    "fn-swap": false
+    "_modelId": "B35B408A0000",
+    "_name": "MX Keys Keyboard",
+    "_sensitive": {
+      "change-host": false,
+      "divert-keys": false,
+      "fn-swap": false,
+      "multiplatform": false
+    },
+    "_serial": "1EC833E0",
+    "_unitId": "1EC833E0",
+    "backlight": true,
+    "disable-keyboard-keys": {
+      "1": false,
+      "16": false,
+      "2": false,
+      "4": false,
+      "8": false
+    },
+    "divert-keys": {
+      "10": 0,
+      "110": 0,
+      "111": 0,
+      "191": 0,
+      "199": 0,
+      "200": 0,
+      "209": 0,
+      "210": 0,
+      "211": 0,
+      "224": 0,
+      "225": 0,
+      "226": 0,
+      "227": 0,
+      "228": 0,
+      "229": 0,
+      "230": 0,
+      "231": 0,
+      "232": 0,
+      "233": 0,
+      "234": 0,
+      "235": 0,
+      "236": 0
+    },
+    "fn-swap": false,
+    "multiplatform": 0
   },
   "408A:F9C49D6A": {
     "_name": "MX Keys Wireless Keyboard",
     "fn-swap": false
   },
-  "_version": "1.0.1"
+  "_version": "1.1.1"
 }

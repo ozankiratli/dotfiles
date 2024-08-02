@@ -1,44 +1,97 @@
-
+# Config file for swaywm 1.7
+# OS: Ubuntu 22.04.1 
 # author: evolozzy
 
-
-#GENERAL
+# GENERAL
 set $mod Mod4
-font pango: Acme, FontAwesome 5 Brands Regular, FontAwesome, FontAwesome 5 Free Solid 10
+font pango: Acme, FontAwesome, 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'Font Awesome 5 Brands Regular' 10
 default_border none
 gaps inner 6
 gaps outer 0
-smart_gaps off
+# smart_gaps off 
+#xwayland disabled
+#exec Xwayland
+
 
 # Setting menu etc
 set $term alacritty
-set $menu wofi -S run 
+set $menu wofi --allow-images -S run 
 
 # Set Wallpapers
-set $wallpaperfile /home/tholian/Pictures/Wallpapers/188752.jpg
+# set $wallpaperfile /home/tholian/Pictures/Wallpapers/188752.jpg
 # set $wallpaper2 "/path/to/file"
 
 # Setting monitors
 set $monMainScrn 'Sharp Corporation 0x1476 0x00000000'
 set $monDell2415 'Dell Inc. DELL U2415 PVJVW554203L' 
-set $monDellSchl 'Dell Inc. DELL 2009W FH8MW0ADD17L' 
 set $monDell2414 'Dell Inc. DELL E2414H VJH96581BXTU' 
+set $monDell2721 'Dell Inc. DELL S2721QS 6T1QM43'
 set $monCaptCard 'Unknown MACROSILICON 0x00000701'
+set $monHPL1950  'Hewlett Packard HP L1950 CNK81516DT'
+set $monASUSext  'Unknown ASUS MB16AC R6LMTF239744'
 
+
+# Ubuntu 22.04 workaround
+exec systemctl --user import-environment
+
+#xwayland scale 2
 # Setting Multiple Outputs
-output $monMainScrn scale 2 pos 1920,1080 res 3840x2160 bg 188752.jpg stretch
-output $monCaptCard pos 1920,0 res 1920x1080 bg 188752.jpg stretch
-output $monDell2414 pos 1920,0 res 1920x1080 bg 188752.jpg stretch
-output $monDellSchl pos 3840,1080 res 1680x1050 bg 188752.jpg stretch
-output $monDell2415 pos 720,0 res 1920x1200 transform 90 bg 188752.jpg stretch
+output $monMainScrn {
+  scale 2
+  pos 640 1440 
+  res 3840x2160 
+  bg 188752.jpg stretch
+  }
 
-input 1386:888:Wacom_Intuos_BT_M_Pen map_to_output HDMI-A-1
-input 1386:888:Wacom_Intuos_BT_M_Pad map_to_output HDMI-A-1
-input 1386:889:Wacom_Intuos_BT_M_Pen map_to_output HDMI-A-1
-input 1386:889:Wacom_Intuos_BT_M_Pad map_to_output HDMI-A-1
+output $monCaptCard {
+  pos 0 0 
+  res 1920x1080 
+  bg 188752.jpg stretch
+  }
+
+output $monDell2721 {
+  scale 1.5
+  pos 0 0
+  res 3840x2160
+  bg 188752.jpg stretch
+
+}
+
+output $monDell2414 {
+  pos 0 0 
+  res 1920x1080 
+  bg 188752.jpg stretch
+  }
+
+output $monDell2415 {
+  pos 2560 0 
+  res 1920x1200 
+  transform 270 
+  bg 188752.jpg stretch
+  }
+
+output $monHPL1950 {
+  pos 3840 1080 
+  res 1280x1024 
+  bg 188752.jpg stretch
+  }
+
+output $monASUSext {
+  pos 2560 1440
+  res 1920x1080
+  bg 188752.jpg stretch
+  }
+
+input 1386:888:Wacom_Intuos_BT_M_Pen map_to_output DP-2
+input 1386:888:Wacom_Intuos_BT_M_Pad map_to_output DP-2
+input 1386:889:Wacom_Intuos_BT_M_Pen map_to_output DP-2
+input 1386:889:Wacom_Intuos_BT_M_Pad map_to_output DP-2
 input 1267:9377:ELAN_Touchscreen map_to_output eDP-1
 input 1267:9377:ELAN_Touchscreen scroll_method two_finger
-
+input "type:keyboard" {
+   xkb_layout us,tr
+   xkb_options grp:shift_caps_toggle
+}
 
 # COLORS AND THEME SETTINGS
 # Color Definitions
@@ -56,7 +109,6 @@ set $teal			#00AAAA
 set $gray			#595959
 set $dark-gray			#292929
 set $white			#FFFFFF
- 
 
 # window colors
 #			border		background	text		indicator	child_border
@@ -72,19 +124,21 @@ client.background       $darknightblue
 bar {
   swaybar_command waybar
   workspace_buttons yes
-  font pango:M+ 2m medium, FontAwesome 5 Brands Regular, FontAwesome 5 Free Solid,              FontAwesome 10
+  pango_markup enabled
+  font pango: M+ 2m medium, Hack Nerd Font 10
 }
-
 
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Cabinet-Dark-Blue'
-    gsettings set $gnome-schema icon-theme 'Obsidian-Amber'
-    gsettings set $gnome-schema cursor-theme 'Oxygen 02 Vibrant Orange'
-}
+    gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
+    gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
+    gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
+    gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
+    gsettings set $gnome-schema font-name 'Source Sans Pro 10'
+ }
 
-seat seat0 xcursor_theme 'Oxygen 02 Vibrant Orange' 24
+seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24
 
 # PROGRAMS TO RUN
 # Screen settings
@@ -98,82 +152,101 @@ exec_always backlight
 exec --no-startup-id gnome-settings-daemon 
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-exec_always --no-startup-id dunst
+exec --no-startup-id solaar -w hide -b solaar
+exec_always --no-startup-id resetDunst
 
 # Software on Startup
-exec sleep 3s && nextcloud
-exec slack
+#exec slack --enable-features=UseOzonePlatform --ozone-platform=wayland
+#exec slack-sway
 #exec --no-startup-id zoomstart
-exec forticlientstart
 
-#exec firefox
-exec firefox-sway
+exec_always firefox
 exec zotero
 exec nautilus
-exec thunderbird
-exec xournal
+#exec xournal
 exec alacritty
 exec alacritty
 exec rstudio-sway
 
-#exec $term -e  vim /home/tholian/Nextcloud/Academic/Projects/Migration2018/Writing/PNAS/PNAS-template-main.tex
+exec sleep 1s && protonmail-bridge --no-window
+exec sleep 10s && nextcloud
+exec sleep 10s && thunderbird
+exec sleep 15s && signal-wayland
 
+# exec nextcloud
 
-exec_always gnome-keyring-daemon --start
-#exec_always source export $(gnome-keyring-daemon)
-#exec export SSH_AUTH_SOCK
+# WORKSPACES
 
-
-#WORKSPACES
-
-#Terminal
+# Terminal
 set $workspace1 1:  
-#Browser
+# Browser
 set $workspace2 2:  
-#Mail
+# Mail
 set $workspace3 3: 
-#Mendeley
-set $workspace5 5:  
-#FileManager
+# FileManager
 set $workspace4 4: 
-#Writing
+# Mendeley
+set $workspace5 5: 
+# Writing
 set $workspace6 6:  
-#Analysis
+# Analysis
 set $workspace7 7: 
-#Coding
+# Coding
 set $workspace8 8: 
-#Chat
+# Chat
 set $workspace9 9: 
-#Media
+# Media
 set $workspace10 10:  
-#Extra 2:
+# Extra 2:
 set $workspace11 11: 
 set $workspace12 12: 
 
 
-workspace $workspace1 output $monMainScrn 
-workspace $workspace2 output $monDell2415
-workspace $workspace2 output $monDellSchl
-workspace $workspace3 output $monDell2414
-workspace $workspace3 output $monCaptCard 
-workspace $workspace3 output $monDellSchl
-workspace $workspace4 output $monMainScrn 
-workspace $workspace5 output $monDell2414
-workspace $workspace5 output $monCaptCard
-workspace $workspace5 output $monDellSchl
-workspace $workspace6 output $monDell2415
-workspace $workspace7 output $monDell2414
-workspace $workspace7 output $monCaptCard
-workspace $workspace7 output $monDellSchl
-workspace $workspace8 output $monDell2414
-workspace $workspace8 output $monCaptCard
-workspace $workspace9 output $monMainScrn
-workspace $workspace10 output $monDell2414
-workspace $workspace10 output $monCaptCard 
-workspace $workspace11 output $monMainScrn
-workspace $workspace12 output $monDell2414
-workspace $workspace12 output $monCaptCard
+workspace $workspace1 output $monMainScrn
 
+workspace $workspace2 output $monDell2415
+workspace $workspace2 output $monASUSext
+
+workspace $workspace3 output $monDell2721
+workspace $workspace3 output $monCaptCard 
+
+workspace $workspace4 output $monMainScrn 
+
+workspace $workspace5 output $monDell2415
+workspace $workspace5 output $monHPL1950
+
+workspace $workspace6 output $monDell2721
+workspace $workspace6 output $monCaptCard
+
+workspace $workspace7 output $monDell2721
+workspace $workspace7 output $monCaptCard
+workspace $workspace7 output $monHPL1950
+
+workspace $workspace8 output $monDell2721
+workspace $workspace8 output $monCaptCard
+
+workspace $workspace9 output $monMainScrn
+
+workspace $workspace10 output $monDell2721
+workspace $workspace10 output $monCaptCard 
+
+workspace $workspace11 output $monMainScrn
+
+workspace $workspace12 output $monDell2721
+workspace $workspace12 output $monCaptCard
+workspace $workspace12 output $monHPL1950
+
+workspace "WINE" output $monMainScrn
+workspace "BROWSER" output $monDell2721
+workspace "BROWSER" output $monCaptCard
+workspace "WHITEBOARD" output $monDell2721
+workspace "WHITEBOARD" output $monCaptCard
+workspace "TERMINAL" output $monDell2721
+workspace "TERMINAL" output $monCaptCard
+workspace "YOUTUBE" output $monDell2721
+workspace "YOUTUBE" output $monCaptCard
+workspace "VNC-VIEWER" output $monDell2721
+workspace "VNC-VIEWER" output $monCaptCard
 
 # use `xprop` to get class
 assign [app_id="Alacritty"] $workspace1
@@ -181,22 +254,43 @@ assign [app_id="firefox"]  $workspace2
 assign [class="Firefox"] $workspace2
 assign [app_id="thunderbird"]  $workspace3
 assign [app_id="org.gnome.Nautilus"]  $workspace4
-assign [class="Zotero"]  $workspace5
-assign [class="RStudio"]  $workspace7
+assign [app_id="Zotero"]  $workspace5
+assign [app_id="calibre-gui"] $workspace6
+#assign [class="RStudio"]  $workspace7
+assign [class="rstudio"]  $workspace7
+assign [app_id="rstudio"]  $workspace7
+assign [app_id="code-url-handler"]  $workspace8
+assign [app_id="Slack"]  $workspace9
 assign [class="Slack"]  $workspace9
+assign [class="Signal"]  $workspace9
+assign [app_id="signal"]  $workspace9
 assign [class="Skype"]  $workspace9
-assign [class="zoom"]  $workspace9
-assign [class="libreoffice-writer"]  $workspace6
+assign [app_id="zoom"]  $workspace9
+assign [app_id="libreoffice-writer"]  $workspace6
+assign [app_id="libreoffice-calc"]  $workspace6
+assign [app_id="libreoffice-impress"]  $workspace6
+assign [app_id="libreoffice-draw"]  $workspace6
+assign [app_id="libreoffice-math"]  $workspace6
+assign [app_id="libreoffice-base"]  $workspace6
+assign [app_id="libreoffice-startcenter"]  $workspace6
 assign [class="vlc"] $workspace10
 assign [class="Gimp-2.10"] $workspace10
-assign [class="Inkscape"] $workspace10
-assign [class="Xournal"] $workspace10
+assign [app_id="org.inkscape.Inkscape"] $workspace10
+assign [class="Xournal"] "WHITEBOARD"
+assign [app_id="epiphany"] "BROWSER"
+assign [class="sammi core.exe"] "WINE"
+assign [class="explorer.exe"] "WINE"
+assign [app_id="terminator"] "TERMINAL"
+assign [class="Surf"] "BROWSER"
+assign [app_id="org.qutebrowser.qutebrowser"] "BROWSER"
+assign [app_id="mpv"] "YOUTUBE"
+assign [class="realvnc-vncviewer"] "VNC-VIEWER"
 
 set $opacity 0.9
-for_window [class="RStudio"] opacity $opacity
+for_window [class="rstudio"] opacity $opacity
+for_window [app_id="rstudio"] opacity $opacity
 for_window [class="Spotify"] move to workspace $workspace10
 
-#exec_always --no-startup-id swaymsg 'workspace $workspace6 ; $term -e  vim /home/tholian/Nextcloud/Academic/Projects/Migration2018/Writing/PNAS/PNAS-template-main.tex'
 
 #KEYBINDINGS
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -273,10 +367,8 @@ bindsym $mod+Shift+apostrophe move workspace to output down
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# exit swaywm (logs you out of your swat session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #lock
 bindsym $mod+shift+x exec swaylock -n  -c 001111 -i ~/Pictures/Wallpapers/lock2.png -t
 #suspend
@@ -330,6 +422,8 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+o move container to workspace prev_on_output
+bindsym $mod+Shift+p move container to workspace next_on_output
 
 #Shortcut keys
 #Volume
@@ -339,32 +433,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id volume d
 bindsym XF86AudioMute exec --no-startup-id volume mute
 bindsym Shift+XF86AudioMute exec --no-startup-id pavucontrol
 
-#pulseaudio
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-#alsa
-#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 2%+
-#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 2%-
-#bindsym XF86AudioMute exec --no-startup-id amixer -q sset toggle
-
 #Play-pause
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Backlight
-bindsym XF86MonBrightnessUp exec backlight u # increase screen backlight
+bindsym --locked XF86MonBrightnessUp exec backlight u # increase screen backlight
 bindsym XF86Calculator exec backlight u
-bindsym XF86MonBrightnessDown exec backlight d # decrease screen backlight
+bindsym --locked XF86MonBrightnessDown exec backlight d # decrease screen backlight
 bindsym XF86HomePage exec backlight d
-
-#Brightness
-bindsym Shift+XF86MonBrightnessUp exec brightness -u # increase screen brightness
-bindsym Shift+XF86MonBrightnessDown exec brightness -d # decrease screen brightness
-bindsym Shift+Mod1+XF86MonBrightnessUp exec brightness -m # equalize screen brightness
-bindsym Shift+Mod1+XF86MonBrightnessDown exec brightness -m # equalize screen brightness
 
 #Screenshot
 bindsym Print exec grimshot save screen
@@ -382,3 +460,8 @@ bindsym Control+Shift+Print exec grimshot copy area
 #Xft.dpi:220
 #Xcursor.theme: Oxygen 02 Vibrant Orange
 
+
+#exec_always eval export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#exec_always source export $(gnome-keyring-daemon)
+#exec_always export SSH_AUTH_SOCK
+#exec_always export GNOME_KEYRING_CONTROL

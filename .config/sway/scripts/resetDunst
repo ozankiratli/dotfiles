@@ -1,0 +1,10 @@
+#!/bin/bash
+
+killall dunst
+
+#MONITORCOUNT=`swaymsg -t get_outputs | grep type | wc -l `
+#NEWINDEX=$(( $MONITORCOUNT - 1 ))
+
+#sed -i -r "s/(monitor =).*/\1 $NEWINDEX/"  /home/tholian/.config/dunst/dunstrc
+
+dunst -verbosity mesg --startup-notification > /home/tholian/log/dunst-runtime.log 2>&1 & 

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+slack --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland

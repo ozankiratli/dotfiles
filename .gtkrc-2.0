@@ -2,10 +2,10 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/tholian/.gtkrc-2.0.mine"
-gtk-theme-name="Cabinet-Dark-Blue"
-gtk-icon-theme-name="Obsidian-Amber"
-gtk-font-name="Ubuntu 12"
-gtk-cursor-theme-name="Oxygen 02 Vibrant Orange"
+gtk-theme-name="VALYRIAN-Molten-Steel"
+gtk-icon-theme-name="Vimix-Black-dark"
+gtk-font-name="Source Sans Pro 10"
+gtk-cursor-theme-name="Oxygen-Vibrant-Orange"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
