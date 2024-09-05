@@ -1,10 +1,14 @@
 #!/bin/bash
 
+echo "Resetting dunst"
+echo "Killing any active dunst instance"
 killall dunst
-
+#killall gnome-shell 
 #MONITORCOUNT=`swaymsg -t get_outputs | grep type | wc -l `
 #NEWINDEX=$(( $MONITORCOUNT - 1 ))
 
 #sed -i -r "s/(monitor =).*/\1 $NEWINDEX/"  /home/tholian/.config/dunst/dunstrc
+echo "Restarting dunst"
+dunst -verbosity mesg --startup-notification > /home/tholian/sway.log 2>&1 & 
 
-dunst -verbosity mesg --startup-notification > /home/tholian/log/dunst-runtime.log 2>&1 & 
+echo "dunst reset complete!" 

@@ -1,85 +1,69 @@
 # Config file for swaywm 1.7
-# OS: Ubuntu 22.04.1 
+# OS: ArchLinux
 # author: evolozzy
 
 # GENERAL
 set $mod Mod4
-font pango: Acme, FontAwesome, 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'Font Awesome 5 Brands Regular' 10
+font pango: 'Noto Sans Condensed','Font Awesome 5 Brands Regular' ,'Hack Nerd Font Mono' Bold  10 
 default_border none
 gaps inner 6
 gaps outer 0
-# smart_gaps off 
-#xwayland disabled
-#exec Xwayland
-
 
 # Setting menu etc
 set $term alacritty
 set $menu wofi --allow-images -S run 
 
 # Set Wallpapers
-# set $wallpaperfile /home/tholian/Pictures/Wallpapers/188752.jpg
-# set $wallpaper2 "/path/to/file"
+set $wpaperh wallpaper-h.jpg
+set $wpaperv wallpaper-v.jpg
 
 # Setting monitors
-set $monMainScrn 'Sharp Corporation 0x1476 0x00000000'
+set $monMainScrn 'eDP-1'
+#set $monMainScrn 'Sharp Corporation 0x1476'
 set $monDell2415 'Dell Inc. DELL U2415 PVJVW554203L' 
-set $monDell2414 'Dell Inc. DELL E2414H VJH96581BXTU' 
-set $monDell2721 'Dell Inc. DELL S2721QS 6T1QM43'
 set $monCaptCard 'Unknown MACROSILICON 0x00000701'
+set $monDell2721 'Dell Inc. DELL S2721QS 6T1QM43'
 set $monHPL1950  'Hewlett Packard HP L1950 CNK81516DT'
-set $monASUSext  'Unknown ASUS MB16AC R6LMTF239744'
+set $monASUSext  '"ASUSTek COMPUTER INC ASUS MB16AC R6LMTF239744"'
+#set $monASUSext  'DP-1'
 
-
-# Ubuntu 22.04 workaround
-exec systemctl --user import-environment
-
-#xwayland scale 2
-# Setting Multiple Outputs
 output $monMainScrn {
   scale 2
   pos 640 1440 
-  res 3840x2160 
-  bg 188752.jpg stretch
+  res 3840x2160
+  bg $wpaperh stretch
   }
 
 output $monCaptCard {
   pos 0 0 
-  res 1920x1080 
-  bg 188752.jpg stretch
+  res 1920x1080@30Hz
+  bg $wpaperh stretch
   }
 
 output $monDell2721 {
   scale 1.5
   pos 0 0
-  res 3840x2160
-  bg 188752.jpg stretch
-
+  res 3840x2160@60Hz
+  bg $wpaperh stretch
 }
-
-output $monDell2414 {
-  pos 0 0 
-  res 1920x1080 
-  bg 188752.jpg stretch
-  }
 
 output $monDell2415 {
   pos 2560 0 
-  res 1920x1200 
+  res 1920x1200@59.950Hz
   transform 270 
-  bg 188752.jpg stretch
+  bg $wpaperv stretch
   }
 
 output $monHPL1950 {
   pos 3840 1080 
   res 1280x1024 
-  bg 188752.jpg stretch
+  bg $wpaperh stretch
   }
 
 output $monASUSext {
   pos 2560 1440
   res 1920x1080
-  bg 188752.jpg stretch
+  bg $wpaperh stretch
   }
 
 input 1386:888:Wacom_Intuos_BT_M_Pen map_to_output DP-2
@@ -92,6 +76,19 @@ input "type:keyboard" {
    xkb_layout us,tr
    xkb_options grp:shift_caps_toggle
 }
+
+# Startup Software
+# GNOME workaround
+exec_always --no-startup-id resetDunst
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Screen settings
+exec_always backlight
+
+# Needed applet buttons
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id sleep 10s && solaar -w hide -b solaar
 
 # COLORS AND THEME SETTINGS
 # Color Definitions
@@ -117,7 +114,6 @@ client.unfocused	$blue-gray	$navy		$blue-gray	$teal		$dark-gray
 client.focused_inactive	$blue-gray	$darknightblue	$white		$teal		$dark-gray
 client.urgent		$darkred	$darkaqua	$orange		$teal		$bright-orange
 client.placeholder      $blue-gray	$darknightblue	$orange		$teal		$dark-gray
-
 client.background       $darknightblue
 
 
@@ -128,52 +124,6 @@ bar {
   font pango: M+ 2m medium, Hack Nerd Font 10
 }
 
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
-    gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
-    gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
-    gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
-    gsettings set $gnome-schema font-name 'Source Sans Pro 10'
- }
-
-seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24
-
-# PROGRAMS TO RUN
-# Screen settings
-exec_always backlight
-
-# Power settings
-#exec --no-startup-id indicator-cpufreq
-#exec --no-startup-id powertop --auto-tune
-
-# Needed applet buttons
-exec --no-startup-id gnome-settings-daemon 
-exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
-exec --no-startup-id solaar -w hide -b solaar
-exec_always --no-startup-id resetDunst
-
-# Software on Startup
-#exec slack --enable-features=UseOzonePlatform --ozone-platform=wayland
-#exec slack-sway
-#exec --no-startup-id zoomstart
-
-exec_always firefox
-exec zotero
-exec nautilus
-#exec xournal
-exec alacritty
-exec alacritty
-exec rstudio-sway
-
-exec sleep 1s && protonmail-bridge --no-window
-exec sleep 10s && nextcloud
-exec sleep 10s && thunderbird
-exec sleep 15s && signal-wayland
-
-# exec nextcloud
 
 # WORKSPACES
 
@@ -201,6 +151,7 @@ set $workspace10 10: 
 set $workspace11 11: 
 set $workspace12 12: 
 
+exec swaymsg workspace $workspace1
 
 workspace $workspace1 output $monMainScrn
 
@@ -245,27 +196,19 @@ workspace "TERMINAL" output $monDell2721
 workspace "TERMINAL" output $monCaptCard
 workspace "YOUTUBE" output $monDell2721
 workspace "YOUTUBE" output $monCaptCard
-workspace "VNC-VIEWER" output $monDell2721
-workspace "VNC-VIEWER" output $monCaptCard
+#workspace "VNC-VIEWER" output $monDell2721
+#workspace "VNC-VIEWER" output $monCaptCard
 
 # use `xprop` to get class
 assign [app_id="Alacritty"] $workspace1
 assign [app_id="firefox"]  $workspace2
-assign [class="Firefox"] $workspace2
 assign [app_id="thunderbird"]  $workspace3
-assign [app_id="org.gnome.Nautilus"]  $workspace4
+assign [app_id="nemo"]  $workspace4
 assign [app_id="Zotero"]  $workspace5
 assign [app_id="calibre-gui"] $workspace6
-#assign [class="RStudio"]  $workspace7
-assign [class="rstudio"]  $workspace7
 assign [app_id="rstudio"]  $workspace7
 assign [app_id="code-url-handler"]  $workspace8
-assign [app_id="Slack"]  $workspace9
-assign [class="Slack"]  $workspace9
-assign [class="Signal"]  $workspace9
 assign [app_id="signal"]  $workspace9
-assign [class="Skype"]  $workspace9
-assign [app_id="zoom"]  $workspace9
 assign [app_id="libreoffice-writer"]  $workspace6
 assign [app_id="libreoffice-calc"]  $workspace6
 assign [app_id="libreoffice-impress"]  $workspace6
@@ -274,22 +217,45 @@ assign [app_id="libreoffice-math"]  $workspace6
 assign [app_id="libreoffice-base"]  $workspace6
 assign [app_id="libreoffice-startcenter"]  $workspace6
 assign [class="vlc"] $workspace10
-assign [class="Gimp-2.10"] $workspace10
+assign [class="Gimp"] $workspace10
 assign [app_id="org.inkscape.Inkscape"] $workspace10
-assign [class="Xournal"] "WHITEBOARD"
-assign [app_id="epiphany"] "BROWSER"
-assign [class="sammi core.exe"] "WINE"
-assign [class="explorer.exe"] "WINE"
-assign [app_id="terminator"] "TERMINAL"
-assign [class="Surf"] "BROWSER"
-assign [app_id="org.qutebrowser.qutebrowser"] "BROWSER"
+assign [app_id="com.github.xournalpp.xournalpp"] "WHITEBOARD"
 assign [app_id="mpv"] "YOUTUBE"
-assign [class="realvnc-vncviewer"] "VNC-VIEWER"
 
 set $opacity 0.9
-for_window [class="rstudio"] opacity $opacity
 for_window [app_id="rstudio"] opacity $opacity
-for_window [class="Spotify"] move to workspace $workspace10
+
+
+
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    export MOZ_ENABLE_WAYLAND=1
+    export GTK_THEME='VALYRIAN-Molten-Steel'
+    gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
+    gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
+    gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
+    #gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
+    gsettings set $gnome-schema cursor-theme 'Maya-Orange'
+    gsettings set $gnome-schema font-name 'Source Sans Pro 10'
+ }
+
+#seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24
+seat seat0 xcursor_theme 'Maya-Orange' 24
+
+# PROGRAMS TO RUN
+
+# Software on Startup
+exec firefox
+exec zotero
+exec nemo
+exec alacritty
+exec rstudio
+
+exec sleep 1s && protonmail-bridge --no-window
+exec sleep 5s && nextcloud
+exec sleep 10s && thunderbird
+exec sleep 15s && signal-wayland
 
 
 #KEYBINDINGS
@@ -370,11 +336,12 @@ bindsym $mod+Shift+c reload
 # exit swaywm (logs you out of your swat session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #lock
-bindsym $mod+shift+x exec swaylock -n  -c 001111 -i ~/Pictures/Wallpapers/lock2.png -t
+bindsym $mod+shift+x exec swaylock
+
 #suspend
-bindsym $mod+shift+s exec suspendpc
+bindsym $mod+shift+s exec suspendpc 
 #lock & suspend
-bindsym $mod+shift+z exec swaylock -n -c 001111 -t & suspendpc
+bindsym $mod+shift+z exec swaylock & suspendpc
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -445,23 +412,60 @@ bindsym --locked XF86MonBrightnessDown exec backlight d # decrease screen backli
 bindsym XF86HomePage exec backlight d
 
 #Screenshot
-bindsym Print exec grimshot save screen
-bindsym Shift+Print exec grimshot save area
-bindsym Control+Print exec grimshot copy screen
-bindsym Control+Shift+Print exec grimshot copy area
+bindsym Print exec grimshot --notify save screen ~/Pictures/grimshot-$(date +'%Y-%m-%d_%H-%M-%S.%2N').png
+bindsym Shift+Print exec grimshot --notify save area ~/Pictures/grimshot-$(date +'%Y-%m-%d_%H-%M-%S.%2N').png
+bindsym Control+Print exec grimshot --notify copy screen ~/Pictures/grimshot-$(date +'%Y-%m-%d_%H-%M-%S.%2N').png
+bindsym Control+Shift+Print exec grimshot --notify copy area ~/Pictures/grimshot-$(date +'%Y-%m-%d_%H-%M-%S.%2N').png
 
 
+# OLD SETTINGS
 
-# Add these lines to ~/.Xresources
-#Xft.antialias: true
-#Xft.hiting: true
-#Xft.rgba: rgba
-#Xft.hintstyle: hintfull
-#Xft.dpi:220
-#Xcursor.theme: Oxygen 02 Vibrant Orange
+# smart_gaps off 
+#xwayland disabled
 
+#set $monMainScrn 'Sharp Corporation 0x1476 Unknown'
+#set $monMainScrnWP 'Sharp Corporation 0x1476'
 
-#exec_always eval export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 #exec_always source export $(gnome-keyring-daemon)
 #exec_always export SSH_AUTH_SOCK
 #exec_always export GNOME_KEYRING_CONTROL
+#exec eval $(keychain --eval --agents ssh --inherit any)
+#exec eval `ssh-agent -s`
+#exec eval export $(gnome-keyring-daemon --replace --components=pkcs11,secrets,ssh)
+#exec --no-startup-id systemctl --user import-environment
+#exec --no-startup-id gnome-shell --headless
+#exec --no-startup-id gnome-settings-daemon 
+
+#assign [class="Firefox"] $workspace2
+#assign [class="RStudio"]  $workspace7
+#assign [class="rstudio"]  $workspace7
+#assign [app_id="Slack"]  $workspace9
+#assign [class="Slack"]  $workspace9
+#assign [class="Signal"]  $workspace9
+#assign [class="Skype"]  $workspace9
+#assign [app_id="zoom"]  $workspace9
+#assign [class="Xournal"] "WHITEBOARD"
+#assign [app_id="epiphany"] "BROWSER"
+#assign [class="sammi core.exe"] "WINE"
+#assign [class="explorer.exe"] "WINE"
+#assign [app_id="terminator"] "TERMINAL"
+#assign [class="Surf"] "BROWSER"
+#assign [app_id="org.qutebrowser.qutebrowser"] "BROWSER"
+#assign [class="realvnc-vncviewer"] "VNC-VIEWER"
+
+#for_window [class="rstudio"] opacity $opacity
+#for_window [class="Spotify"] move to workspace $workspace10
+
+#exec_always export $(envsubst < /home/tholian/.env)
+
+# Power settings
+#exec --no-startup-id indicator-cpufreq
+#exec --no-startup-id powertop --auto-tune
+
+# Software on Startup
+#exec slack --enable-features=UseOzonePlatform --ozone-platform=wayland
+#exec slack-sway
+#exec --no-startup-id zoomstart
+#exec nautilus
+#exec xournal
+#exec alacritty

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PID2KILL=`swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.focused==true) | {name, pid}'`  
+
+kill -9 $PID2KILL
+

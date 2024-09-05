@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+export XDG_CURRENT_DESKTOP=GNOME
+#export _JAVA_AWT_WM_NOREPARENTING=1
+export QT_QPA_PLATFORM=wayland
+#export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export BEMENU_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+#export GTK_THEME='VALYRIAN-Molten-Steel'
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures"
+export XDG_CLOUD_DIR="$HOME/Nextcloud"
+export SSH_ASKPASS="/usr/lib/seahorse/ssh-askpass"
+#export WLR_DRM_DEVICES=/dev/dri/card0
+export WLR_DRM_NO_MODIFIERS=1
+export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER=gles2
+export WLR_DRM_NO_ATOMIC=1
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+source ~/.config/user-dirs.dirs > /home/tholian/sway.log 2>&1
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+sway --unsupported-gpu >> /home/tholian/sway.log 2>&1
+
