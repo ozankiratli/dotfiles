@@ -1,0 +1,4 @@
+#!/bin/bash
+
+element-desktop --ozone-platform-hint=auto --use-gl=angle --enable-features=VaapiVideoEncoder
+

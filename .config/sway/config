@@ -151,51 +151,26 @@ set $workspace10 10: 
 set $workspace11 11: 
 set $workspace12 12: 
 
-exec swaymsg workspace $workspace1
 
-workspace $workspace1 output $monMainScrn
-
-workspace $workspace2 output $monDell2415
-workspace $workspace2 output $monASUSext
-
-workspace $workspace3 output $monDell2721
-workspace $workspace3 output $monCaptCard 
-
+workspace $workspace1 output $monMainScrn 
+workspace $workspace1
+workspace $workspace2 output $monDell2415 $monASUSext
+workspace $workspace3 output $monMainScrn
 workspace $workspace4 output $monMainScrn 
-
-workspace $workspace5 output $monDell2415
-workspace $workspace5 output $monHPL1950
-
-workspace $workspace6 output $monDell2721
-workspace $workspace6 output $monCaptCard
-
-workspace $workspace7 output $monDell2721
-workspace $workspace7 output $monCaptCard
-workspace $workspace7 output $monHPL1950
-
-workspace $workspace8 output $monDell2721
-workspace $workspace8 output $monCaptCard
-
+workspace $workspace5 output $monDell2415 $monHPL1950
+workspace $workspace6 output $monDell2721 $monCaptCard
+workspace $workspace7 output $monDell2721 $monCaptCard $monHPL1950
+workspace $workspace8 output $monDell2721 $monCaptCard
 workspace $workspace9 output $monMainScrn
-
-workspace $workspace10 output $monDell2721
-workspace $workspace10 output $monCaptCard 
-
+workspace $workspace10 output $monDell2721 $monCaptCard 
 workspace $workspace11 output $monMainScrn
-
-workspace $workspace12 output $monDell2721
-workspace $workspace12 output $monCaptCard
-workspace $workspace12 output $monHPL1950
+workspace $workspace12 output $monDell2721 $monCaptCard $monHPL1950
 
 workspace "WINE" output $monMainScrn
-workspace "BROWSER" output $monDell2721
-workspace "BROWSER" output $monCaptCard
-workspace "WHITEBOARD" output $monDell2721
-workspace "WHITEBOARD" output $monCaptCard
-workspace "TERMINAL" output $monDell2721
-workspace "TERMINAL" output $monCaptCard
-workspace "YOUTUBE" output $monDell2721
-workspace "YOUTUBE" output $monCaptCard
+workspace "BROWSER" output $monDell2721 $monCaptCard
+workspace "WHITEBOARD" output $monDell2721 $monCaptCard
+workspace "TERMINAL" output $monDell2721 $monCaptCard
+workspace "YOUTUBE" output $monDell2721 $monCaptCard
 #workspace "VNC-VIEWER" output $monDell2721
 #workspace "VNC-VIEWER" output $monCaptCard
 
@@ -206,9 +181,6 @@ assign [app_id="thunderbird"]  $workspace3
 assign [app_id="nemo"]  $workspace4
 assign [app_id="Zotero"]  $workspace5
 assign [app_id="calibre-gui"] $workspace6
-assign [app_id="rstudio"]  $workspace7
-assign [app_id="code-url-handler"]  $workspace8
-assign [app_id="signal"]  $workspace9
 assign [app_id="libreoffice-writer"]  $workspace6
 assign [app_id="libreoffice-calc"]  $workspace6
 assign [app_id="libreoffice-impress"]  $workspace6
@@ -216,7 +188,11 @@ assign [app_id="libreoffice-draw"]  $workspace6
 assign [app_id="libreoffice-math"]  $workspace6
 assign [app_id="libreoffice-base"]  $workspace6
 assign [app_id="libreoffice-startcenter"]  $workspace6
+assign [app_id="rstudio"]  $workspace7
 assign [class="vlc"] $workspace10
+assign [app_id="code-url-handler"]  $workspace8
+assign [app_id="signal"]  $workspace9
+assign [app_id="Element"]  $workspace9
 assign [class="Gimp"] $workspace10
 assign [app_id="org.inkscape.Inkscape"] $workspace10
 assign [app_id="com.github.xournalpp.xournalpp"] "WHITEBOARD"
@@ -251,11 +227,16 @@ exec zotero
 exec nemo
 exec alacritty
 exec rstudio
+workspace $workspace7
+workspace $workspace1
+
 
 exec sleep 1s && protonmail-bridge --no-window
 exec sleep 5s && nextcloud
 exec sleep 10s && thunderbird
-exec sleep 15s && signal-wayland
+exec sleep 11s && signal-wayland
+exec sleep 12s && element-wayland
+
 
 
 #KEYBINDINGS
