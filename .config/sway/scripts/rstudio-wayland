@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#export QT_QPA_PLATFORM=xcb && rstudio
+
+#export WAYLAND_DISPLAY=wayland-0 && \
+export XDG_SESSION_TYPE=wayland && \
+rstudio \
+  --disable-features=UseChromeOSDirectVideoDecoder \
+  --use-gl=angle \
+  --use-angle=gl \
+  --enable-features=VaapiVideoEncoder,VaapiVideoDecoder,WaylandWindowDecorations,WebRTCPipeWireCapturer,CanvasOopRasterization \
+  --enable-unsafe-webgpu \
+  --ozone-platform-hint=auto \
+  --enable-accelerated-video-decode \
+  --enable-zero-copy \
+  --enable-gpu-rasterization \
+  --enable-native-gpu-memory-buffers \
+  --ignore-gpu-blocklist \
+  --enable-gpu-memory-buffer-compositor-resources \
+  --enable-gpu-memory-buffer-video-frames \
+  --enable-accelerated-2d-canvas \
+  --enable-drdc \
+  --enable-gpu-compositing \
+  --disable-gpu-sandbox \
+
+  #--vulkan \
+  #--enable-skia-graphite \
+  #--skia-graphite-backend=dawn \
+  #--enable-vulkan-protected-memory \
+  #--enable-features=Vulkan,SkiaRenderer,UseChromeOSDirectVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE \
+  #--enable-webrtc-hw-decoding --enable-webrtc-hw-encoding \
+  #--use-vulkan=native \
+  #--enable-oop-rasterization \
+  #--disable-gpu-driver-bug-workarounds \
+
+
+# Breaks the system
+# --enable-features=RawDraw
+
+# Vulkan can be enabled on enable features but breaks terminal rendering

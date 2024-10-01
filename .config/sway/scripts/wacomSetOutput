@@ -1,0 +1,61 @@
+#!/bin/bash
+
+CONNECTED_WACOM_DEVICES=`swaymsg -p -t get_inputs | grep "Identifier" | grep "Wacom" | sed 's/Identifier: //'`
+if [ -z "$CONNECTED_WACOM_DEVICES" ] ; then
+  echo "No Wacom device is connected"
+  exit 1
+else
+  echo "Connected Wacom devices are:"
+  for device in $CONNECTED_WACOM_DEVICES ; do
+    echo "   "$device
+  done
+  echo ""
+fi
+
+CURRENT_WACOM_OUTPUT=`cat $HOME/.config/sway/scripts/wacomSetOutput.d/currentOutput.out`
+echo "Wacom Tablet is currently mapped to: $CURRENT_WACOM_OUTPUT"
+echo ""
+
+CONNECTED_MONITORS=`swaymsg -p -t get_outputs | grep Output | sed 's/(focused)//' | sed 's/Output//' | awk '{print $1}'`
+COUNTER=0
+echo "Connected monitors are:"
+for monitor in $CONNECTED_MONITORS ; do
+  COUNTER=$(( COUNTER + 1 ))
+  echo "   "$COUNTER")" $monitor
+done
+echo ""
+
+while true; do 
+  read -p "Choose the number of which screen to map the Wacom tablet to (Press Return key to keep current configuration $CURRENT_WACOM_OUTPUT):" MONITOR_ID
+  if [ -z "$MONITOR_ID" ] ; then
+    exit 1
+  elif [ "$MONITOR_ID" -gt "$COUNTER" ] || [ "$MONITOR_ID" -lt "1" ] ; then
+    echo "The monitor ID you entered ($MONITOR_ID) is out of bounds. Available values are 1 to $COUNTER. Try again..."
+  else
+    WACOM_SCREEN=`echo $CONNECTED_MONITORS | awk -v ID=$MONITOR_ID '{print $ID}'`
+    echo "You selected: "$WACOM_SCREEN
+    while true; do
+      read -p "Continue [Y/n]" yn
+      case "${yn}" in
+	"" | [Yy] | [Yy][Ee][Ss] )
+	  echo "Remapping Wacom Devices..."
+	  for device in $CONNECTED_WACOM_DEVICES ; do
+	    echo "swaymsg input $device map_to_output $WACOM_SCREEN"
+	    swaymsg input $device map_to_output $WACOM_SCREEN
+	  done
+	  echo $WACOM_SCREEN > $HOME/.config/sway/scripts/wacomSetOutput.d/currentOutput.out
+	  exit 1
+	  ;;
+	[Nn] | [Nn][Oo] )
+	  echo "Exiting..."
+	  exit 1
+	  ;;
+	*)
+	  echo "Invalid response try again"
+	  ;;
+      esac
+    done
+  fi
+
+done
+
