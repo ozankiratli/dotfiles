@@ -1,0 +1,59 @@
+[1][X] { Education: USC removes "field" }   https://www.npr.org/2023/01/14/1148470571/usc-office-removes-field-from-curriculum-racist
+[2][X] { Climate Toll }   https://www.theguardian.com/environment/2022/dec/27/biggest-climate-toll-in-year-of-devastating-disasters-revealed
+[3][X] { NASA 2022 is the 5th hottest }   https://climate.nasa.gov/news/3246/
+[4][X] { NASA video }   https://youtu.be/GxXmIgcfFn4
+[5][X] { Hottest 8 }   https://www.theguardian.com/environment/2023/jan/12/2022-hottest-global-temperatures-past-eight-years-climate-crisis
+[6][X] { Hottest 8 }   https://www.nytimes.com/interactive/2023/climate/earth-hottest-years.html
+[7][X] { High Temperatures }   https://www.theguardian.com/world/2023/jan/02/extreme-event-warm-january-weather-breaks-records-europe
+[8][X] { Europe temperature records }   https://www.theguardian.com/world/2023/jan/10/twelve-european-countries-broke-temperature-records-in-2022
+[9][X] { Ocean temperatures }   https://www.theguardian.com/environment/2023/jan/11/oceans-were-the-hottest-ever-recorded-in-2022-analysis-shows
+[10][X] { Tornado in AL }   https://www.npr.org/2023/01/12/1148806544/an-extremely-dangerous-tornado-in-selma-ala-damages-buildings-and-uproots-trees
+[11][X] { Floods in CA }   https://www.nytimes.com/2023/01/12/podcasts/the-daily/california-storms-flooding-rain.html
+[12][X] { Research on extreme climate events }   https://www.theguardian.com/environment/2023/jan/09/climate-crisis-extreme-weather-heat-rainfall-drought
+[13][X] { Climate events La Ninã }   https://www.realclimate.org/index.php/archives/2023/01/2022-updates-to-the-temperature-records/?utm_source=rss&utm_medium=rss&utm_campaign=2022-updates-to-the-temperature-records
+[14][X] { El Niño rise in the temperatures }   https://www.theguardian.com/environment/2023/jan/16/return-of-el-nino-will-cause-off-the-chart-temperature-rise-climate-crisis
+[15][X] { Extreme weather }   https://www.npr.org/2023/01/05/1147116000/la-nina-climate-change-california-bomb-cyclone-winter-heat-wave
+[16][X] { Cost if extreme weather }   https://www.npr.org/2023/01/10/1147986096/extreme-weather-fueled-by-climate-change-cost-the-u-s-165-billion-in-2022
+[17][_] { Research on history of the atmosphere }   https://www.theguardian.com/world/2023/jan/15/time-tunnel-why-an-australian-expedition-is-drilling-through-26km-of-antarctic-ice
+[18][_] { Ocean rise and walling the cities }   https://www.theguardian.com/us-news/2023/jan/13/us-cities-ugly-seawalls-climate-crisis-miami
+[19][_] { CO2 tracking NASA }   https://climate.nasa.gov/news/3245/
+[20][_] { US CO2 levels }   https://www.nytimes.com/2023/01/10/climate/us-carbon-emissions-2022.html
+[21][_] { Climate Impact label }   https://www.theguardian.com/environment/2022/dec/27/climate-impact-labels-could-help-people-eat-less-red-meat
+[22][X] { Infrastructure problems }   https://www.theguardian.com/environment/2023/jan/15/summer-holidays-see-people-queuing-to-charge-electric-cars-for-first-time-in-australia
+[23][_] { 3D printing homes }   https://www.npr.org/2023/01/16/1148943607/3d-printed-homes-level-up-with-a-2-story-house-in-houston
+[24][_] { New refrigeration technology }   https://newscenter.lbl.gov/2023/01/03/cool-new-method-of-refrigeration/
+[25][_] { Gas stoves }   https://www.nytimes.com/2023/01/13/opinion/gas-induction-stove-environment.html
+[26][_] { More on gas stoves }   https://www.nytimes.com/2023/01/13/climate/gas-stove-questions.html
+[27][_] { Natural gas power plants }   https://www.sciencedaily.com/releases/2023/01/230111193429.htm
+[28][_] { Pollution watch }   https://www.theguardian.com/environment/2023/jan/13/pollutionwatch-citizen-science-alarm-uk-air-pollution
+[29][_] { Company releases sulfur to atmosphere without oversight }   http://www.reportfrompeter.com/index.php/global-warming-948/
+[30][_] { Sulphur dioxide Stratospheric Aerosol Injection }   http://www.reportfrompeter.com/index.php/environment-1187/
+[31][_] { Who's going to store carbon }   https://www.theguardian.com/environment/2023/jan/12/fossil-fuel-producers-must-be-forced-to-take-back-carbon-say-scientists
+[32][_] { Open source sustainability }   https://report.opensustain.tech/chapters/index.html
+[33][_] { Machine learning to detect climate hazards }   https://www.sciencedaily.com/releases/2023/01/230112134742.htm
+[34][_] { Potential carbon emissions of self driving fleets }   https://www.sciencedaily.com/releases/2023/01/230112113141.htm
+[35][_] { US Lithium mine }   https://www.npr.org/2023/01/06/1147452848/the-fate-of-americas-largest-lithium-mine-is-in-a-federal-judges-hands
+[36][_] { Sweden rare earth minerals deposit }   https://www.npr.org/2023/01/13/1149135808/rare-earth-minerals-deposit-found-in-sweden
+[37][_] { Wherever there's coal there's corruption }   https://www.nytimes.com/2023/01/13/climate/signal-peak-mine-coal.html
+[38][_] { Global food prices }   https://www.npr.org/2023/01/07/1147660525/global-food-prices-2022-record-high
+[39][_] { Waste in the house }   https://www.npr.org/2023/01/10/1148063039/how-u-s-households-can-stop-wasting-the-food-they-buy
+[40][_] { NTSB wtf? }   https://www.npr.org/2023/01/11/1148483758/ntsb-heavy-electric-vehicles-safety-risks
+[41][_] { Exon knew }   https://www.theguardian.com/business/2023/jan/12/exxon-climate-change-global-warming-research
+[42][_] { Germany on coal }   https://www.nytimes.com/2023/01/14/world/europe/germany-village-coal-activists.html
+[43][_] { Offshore Wind Turbines }   https://blog.ucsusa.org/john-rogers/offshore-wind-what-to-watch-for-in-2023/
+[44][_] { Propane new soldiers }   https://www.nytimes.com/2023/01/11/climate/climate-propane-influence-campaign.html
+[45][_] { Ozone restoration }   https://www.nytimes.com/2023/01/09/climate/ozone-hole-restoration-montreal-protocol.html
+[46][_] { Ozone action  https://takvera.blogspot.com/2023/01/chubb-review-into-integrity-of.html?m=1 }   https://takvera.blogspot.com/2023/01/ozone-action-on-track-helping-avoid-05c.html?m=1
+https://takvera.blogspot.com/2023/01/chubb-review-into-integrity-of.html?m=1
+[48][_] { Ozone action }   https://www.npr.org/2023/01/10/1147977166/ozone-layer-recovery-united-nations-report
+[49][_] { to ban single use plastic cutlery }   https://www.npr.org/2023/01/09/1147831853/england-ban-plastic-plates-cutlery-cups
+[50][_] { Opinion on UK ban on plastic cutlery }   https://www.theguardian.com/commentisfree/2023/jan/09/england-ban-single-use-plastics-therese-coffey
+[51][_] { State of Amazon }   https://www.nytimes.com/2023/01/04/magazine/amazon-tipping-point.html
+[52][_] { Endangered species }   https://www.theguardian.com/environment/2023/jan/04/eelgrass-endangered-marine-plant-vital-keeping-climate-stable
+[53][_] { Nuts in the UK }   https://www.theguardian.com/environment/2023/jan/09/english-farmers-turning-to-cultivating-nuts-as-climate-heats
+[54][_] { Ski resorts }   https://www.theguardian.com/world/2023/jan/04/warmest-january-ever-forces-ski-slopes-across-europe-to-close
+[55][_] { ChatGPT plagiarism }   https://www.npr.org/2023/01/09/1147549845/gptzero-ai-chatgpt-edward-tian-plagiarism
+[56][_] { Climate change on parasites }   https://www.nytimes.com/2023/01/09/science/parasites-global-warming.html
+[57][_] { Decline in bird numbers }   https://www.theguardian.com/environment/2023/jan/08/uk-wintering-birds-sharp-decline
+[58][_] { Trees on Lawns }   https://www.theguardian.com/world/2023/jan/13/time-to-branch-out-trees-put-lawns-in-the-shade-when-it-comes-to-tackling-climate-crisis
+[59][_] { Agricultural impact on Environment }   https://www.theguardian.com/environment/2023/jan/16/netherlands-european-union-regulations-livestock

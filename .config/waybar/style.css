@@ -1,9 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "M+ 2m medium","FontAwesome", "Font Awesome 5 Free Regular", "Font Awesome 5 Free Solid","Hack Nerd Font";
-    /*"Hack Nerd Font";*/
+    font-family: "M+ 2m medium", "Font Awesome 6 Free Brands", "Font Awesome 6 Free Solid" , "Font Awesome 6 Free Regular";
     font-size: 16px;
     min-height: 0;
     margin: 0px;
@@ -17,9 +15,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 28, 35, 1);
-    /*background-color: shade(alpha(@borders, 0.9),1.25);*/
-    border-bottom: 3px solid rgba(0, 29, 41, 1);
+    background-color: #0e1b28;
     padding: 0 10px;
     color: #f57900;
     transition-property: background-color;
@@ -36,16 +32,14 @@ window#waybar.hidden {
 
 
 #workspaces {
-    border-right: 5px solid rgba(0,58,82,0.5);
+    border-right: 2px solid rgba(0,72,100,0.4);
 }
-
 
 #workspaces button {
     padding: 0 5px;
-    background-color: rgba(0, 18, 25, 1);
-    border-right: 2px solid rgba(0,40,50,1);
-    border-left: 2px solid rgba(0,18,25,1);
-    /*background-color: transparent;*/
+    background-color: #0b1823;
+    border-right: 2px solid rgba(0,72,100,0.4);
+    border-left: 2px solid #0b1823;
     color: #f57900;
     border-bottom: 3px solid transparent;
     transition-duration: 0.5s;
@@ -61,17 +55,15 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-    background: rgb(0, 90, 50);
-    border-right: 2px solid rgb(0, 90, 50);
-    /*border-right: 2px solid rgba(0,18,25,1);*/
-    border-left: 2px solid rgb(0, 90, 50);
-    /*border-left: 2px solid rgba(0,18,25,1);*/
+    background: rgb(0, 100, 50);
+    border-right: 2px solid rgb(0, 100, 50);
+    border-left: 2px solid rgb(0, 100, 50);
     border-bottom: 3px solid #C24600;
 }
 
 #workspaces button.urgent {
-    border-right: 2px solid rgba(0,18,25,1);
-    border-left: 2px solid rgba(0,18,25,1);
+    border-right: 2px solid #0b1823;
+    border-left: 2px solid #0b1823;
     background-color: #eb4d4b;
 }
 
@@ -85,9 +77,6 @@ window#waybar.hidden {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    /*border-right: 3px solid #770000;
-    border-left: 3px solid #770000;
-    border-bottom: 3px solid #770000;*/
 }
 
 #clock,
@@ -104,7 +93,7 @@ window#waybar.hidden {
 #mode,
 #idle_inhibitor,
 #mpd {
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 0 7px;
     margin: 0 1px;
     color: #ffffff;
@@ -162,12 +151,12 @@ label:focus {
 }
 
 #pulseaudio {
-    border-left: 5px solid rgba(0,58,82,0.5);
+    border-left: 4px solid rgba(0,72,100,0.4);
     animation: color-transform;
 }
 
 #pulseaudio.muted {
-    border-left: 5px solid rgba(0,58,82,0.5);
+    border-left: 4px solid rgba(0,72,100,0.4);
     color: #bb0000;
 }
 
@@ -187,7 +176,9 @@ label:focus {
 }
 
 #tray {
-    background-color: rgba(0, 0, 0, 0.75);
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    background-color: transparent;
+    border-left: 2px solid rgba(0,72,100,0.4);
 }
 
 #idle_inhibitor {
@@ -218,7 +209,7 @@ window#waybar.chromium {
     background-color: transparent;
     background-color: rgba(0, 23, 30, 1);
     padding: 7px;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
 }
 
@@ -226,47 +217,47 @@ window#waybar.chromium {
     background-color: transparent;
     background-color: rgba(0, 23, 30, 1);
     padding: 7px;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
 }
 #mpd {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
     color: #2a5c45;
 }
 
 #mpd.disconnected {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
 }
 
 #mpd.stopped {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
 }
 
 #mpd.paused {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     padding: 4px;
 }
 #custom-media {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
     color: #2a5c45;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
 }
 
 #custom-media.custom-vlc {
     background-color: transparent;
-    background-color: rgba(0, 18, 25, 1);
+    background-color: #0b1823;
 }
 */

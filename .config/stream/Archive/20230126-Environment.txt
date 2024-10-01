@@ -1,0 +1,56 @@
+[1][_] { Research on history of the atmosphere }   https://www.theguardian.com/world/2023/jan/15/time-tunnel-why-an-australian-expedition-is-drilling-through-26km-of-antarctic-ice
+[2][_] { Ocean rise and walling the cities }   https://www.theguardian.com/us-news/2023/jan/13/us-cities-ugly-seawalls-climate-crisis-miami
+[3][X] { CO2 tracking NASA }   https://climate.nasa.gov/news/3245/
+[4][X] { US CO2 levels }   https://www.nytimes.com/2023/01/10/climate/us-carbon-emissions-2022.html
+[5][_] { Climate Impact label }   https://www.theguardian.com/environment/2022/dec/27/climate-impact-labels-could-help-people-eat-less-red-meat
+[6][_] { 3D printing homes }   https://www.npr.org/2023/01/16/1148943607/3d-printed-homes-level-up-with-a-2-story-house-in-houston
+[7][_] { New refrigeration technology }   https://newscenter.lbl.gov/2023/01/03/cool-new-method-of-refrigeration/
+[8][X] { Gas stoves }   https://www.nytimes.com/2023/01/13/opinion/gas-induction-stove-environment.html
+[9][X] { More on gas stoves }   https://www.nytimes.com/2023/01/13/climate/gas-stove-questions.html
+[10][X] { Natural gas power plants }   https://www.sciencedaily.com/releases/2023/01/230111193429.htm
+[11][_] { Pollution watch }   https://www.theguardian.com/environment/2023/jan/13/pollutionwatch-citizen-science-alarm-uk-air-pollution
+[12][X] { Company releases sulfur to atmosphere without oversight }   http://www.reportfrompeter.com/index.php/global-warming-948/
+[13][X] { Sulphur dioxide Stratospheric Aerosol Injection }   http://www.reportfrompeter.com/index.php/environment-1187/
+[14][X] { Who's going to store carbon }   https://www.theguardian.com/environment/2023/jan/12/fossil-fuel-producers-must-be-forced-to-take-back-carbon-say-scientists
+[15][_] { Open source sustainability }   https://report.opensustain.tech/chapters/index.html
+[16][_] { Machine learning to detect climate hazards }   https://www.sciencedaily.com/releases/2023/01/230112134742.htm
+[17][_] { Potential carbon emissions of self driving fleets }   https://www.sciencedaily.com/releases/2023/01/230112113141.htm
+[18][_] { US Lithium mine }   https://www.npr.org/2023/01/06/1147452848/the-fate-of-americas-largest-lithium-mine-is-in-a-federal-judges-hands
+[19][_] { Sweden rare earth minerals deposit }   https://www.npr.org/2023/01/13/1149135808/rare-earth-minerals-deposit-found-in-sweden
+[20][_] { Wherever there's coal there's corruption }   https://www.nytimes.com/2023/01/13/climate/signal-peak-mine-coal.html
+[21][_] { Global food prices }   https://www.npr.org/2023/01/07/1147660525/global-food-prices-2022-record-high
+[22][_] { Waste in the house }   https://www.npr.org/2023/01/10/1148063039/how-u-s-households-can-stop-wasting-the-food-they-buy
+[23][_] { NTSB wtf? }   https://www.npr.org/2023/01/11/1148483758/ntsb-heavy-electric-vehicles-safety-risks
+[24][X] { Exon knew }   https://www.theguardian.com/business/2023/jan/12/exxon-climate-change-global-warming-research
+[25][_] { Germany on coal }   https://www.nytimes.com/2023/01/14/world/europe/germany-village-coal-activists.html
+[26][_] { Offshore Wind Turbines }   https://blog.ucsusa.org/john-rogers/offshore-wind-what-to-watch-for-in-2023/
+[27][X] { Propane new soldiers }   https://www.nytimes.com/2023/01/11/climate/climate-propane-influence-campaign.html
+[28][X] { Ozone restoration }   https://www.nytimes.com/2023/01/09/climate/ozone-hole-restoration-montreal-protocol.html
+[29][X] { Ozone action  https://takvera.blogspot.com/2023/01/ozone-action-on-track-helping-avoid-05c.html?m=1 }   https://takvera.blogspot.com/2023/01/chubb-review-into-integrity-of.html?m=1
+https://takvera.blogspot.com/2023/01/ozone-action-on-track-helping-avoid-05c.html?m=1
+[31][X] { Ozone action }   https://www.npr.org/2023/01/10/1147977166/ozone-layer-recovery-united-nations-report
+[32][X] { to ban single use plastic cutlery }   https://www.npr.org/2023/01/09/1147831853/england-ban-plastic-plates-cutlery-cups
+[33][X] { Opinion on UK ban on plastic cutlery }   https://www.theguardian.com/commentisfree/2023/jan/09/england-ban-single-use-plastics-therese-coffey
+[34][_] { State of Amazon }   https://www.nytimes.com/2023/01/04/magazine/amazon-tipping-point.html
+[35][_] { Endangered species }   https://www.theguardian.com/environment/2023/jan/04/eelgrass-endangered-marine-plant-vital-keeping-climate-stable
+[36][_] { Nuts in the UK }   https://www.theguardian.com/environment/2023/jan/09/english-farmers-turning-to-cultivating-nuts-as-climate-heats
+[37][_] { Ski resorts }   https://www.theguardian.com/world/2023/jan/04/warmest-january-ever-forces-ski-slopes-across-europe-to-close
+[38][_] { ChatGPT plagiarism }   https://www.npr.org/2023/01/09/1147549845/gptzero-ai-chatgpt-edward-tian-plagiarism
+[39][_] { Climate change on parasites }   https://www.nytimes.com/2023/01/09/science/parasites-global-warming.html
+[40][_] { Decline in bird numbers }   https://www.theguardian.com/environment/2023/jan/08/uk-wintering-birds-sharp-decline
+[41][_] { Trees on Lawns }   https://www.theguardian.com/world/2023/jan/13/time-to-branch-out-trees-put-lawns-in-the-shade-when-it-comes-to-tackling-climate-crisis
+[42][_] { Agricultural impact on Environment }   https://www.theguardian.com/environment/2023/jan/16/netherlands-european-union-regulations-livestock
+[43][X] { Shell Carbon offsetting }   https://www.theguardian.com/environment/2023/jan/19/shell-to-spend-450m-on-carbon-offsetting-fears-grow-credits-worthless-aoe
+[44][_] { Animal farming on the ocean }   https://www.theguardian.com/us-news/2023/jan/19/floating-dairy-farm-rotterdam-climate-crisis
+[45][_] { Trees in the cities NYC }   https://www.nytimes.com/2023/01/19/nyregion/trees-plants-air-quality-nyc.html
+[46][_] { Gas stoves }   https://www.npr.org/2023/01/21/1150397853/gas-stoves-became-part-of-the-culture-war-in-less-than-a-week-heres-why
+[47][_] { fix it }   https://www.theguardian.com/business/2023/jan/21/trend-to-mend-cost-of-living-crisis-puts-darning-back-in-vogue
+[48][_] { greenland record temp in 1000y }   http://www.reportfrompeter.com/index.php/global-warming-952/
+[49][X] { carbon pirates Amazon }   https://www.theguardian.com/environment/2023/jan/21/amazon-indigenous-communities-carbon-offsetting-pirates-aoe
+[50][_] { renewable energy in Europe }   http://www.reportfrompeter.com/index.php/global-warming-953/
+[51][X] { bill gates on nuclear solution }   https://www.theguardian.com/us-news/2023/jan/23/no-chance-of-global-heating-below-15c-but-nuclear-tech-promising-in-climate-crisis-bill-gates-says
+[52][X] { no miracle tech needed }   https://www.theguardian.com/environment/2023/jan/23/no-miracles-needed-prof-mark-jacobson-on-how-wind-sun-and-water-can-power-the-world
+[53][_] { fountains in Sydney }   https://www.theguardian.com/australia-news/2023/jan/22/is-it-time-to-turn-western-sydney-into-a-city-of-fountains-it-might-help-beat-the-heat
+[54][_] { Colombia halt on fossil fuel exploration }   https://www.theguardian.com/world/2023/jan/20/colombia-stop-new-oil-gas-exploration-davos
+[55][_] { sea urchins }   https://www.sciencedaily.com/releases/2023/01/230120154922.htm
+[56][_] { seeds from fertile crescent }   https://www.npr.org/2023/01/25/1149738126/climate-change-food-supply-lebanon-seed-bank-agriculture

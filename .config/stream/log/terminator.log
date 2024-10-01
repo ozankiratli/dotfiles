@@ -1,0 +1,12 @@
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.444: Theme parsing error: gtk.css:1549:29: 'transparntize' is not a valid color name
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.444: Theme parsing error: gtk.css:1554:31: 'transparntize' is not a valid color name
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.445: Theme parsing error: gtk.css:1859:72: The :insensitive pseudo-class is deprecated. Use :disabled instead.
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.445: Theme parsing error: gtk.css:1859:117: The :insensitive pseudo-class is deprecated. Use :disabled instead.
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.445: Theme parsing error: gtk.css:1883:72: The :insensitive pseudo-class is deprecated. Use :disabled instead.
+
+(terminator:1914273): Gtk-WARNING **: 17:47:34.445: Theme parsing error: gtk.css:1883:117: The :insensitive pseudo-class is deprecated. Use :disabled instead.

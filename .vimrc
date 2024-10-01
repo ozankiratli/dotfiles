@@ -49,6 +49,8 @@ set noerrorbells
 set visualbell
 " set cursorline
 " set spell
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[0 q"
 
 set sw=2
 set iskeyword+=:

@@ -5,7 +5,7 @@ fade-in=0.5
 grace=3
 grace-no-touch
 
-image=swaylock.jpg
+image=/home/tholian/.config/swaylock/swaylock.jpg
 show-keyboard-layout
 
 clock
