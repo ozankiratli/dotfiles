@@ -1,7 +1,0 @@
-#!/bin/bash
-
-#export QT_QPA_PLATFORM=xcb && rstudio
-
-rstudio --ozone-platform=wayland --use-gl=angle --enable-features=VaapiVideoEncoder,RawDraw
-
-# Vulkan can be enabled on enable features but breaks terminal rendering
