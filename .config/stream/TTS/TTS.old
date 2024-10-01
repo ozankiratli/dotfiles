@@ -1,9 +1,0 @@
-#!/bin/bash
-
-TEXT=$@
-
-/usr/bin/pico2wave -l en-US -w /home/tholian/Nextcloud/SocialMedia/Sounds/tts.wav "$TEXT"
-
-wait
-
-rsync /home/tholian/Nextcloud/SocialMedia/Sounds/tts.wav Stream:Nextcloud/SocialMedia/Sounds/
