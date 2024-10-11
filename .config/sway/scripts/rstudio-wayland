@@ -6,31 +6,40 @@
 export XDG_SESSION_TYPE=wayland && \
 rstudio \
   --disable-features=UseChromeOSDirectVideoDecoder \
-  --use-gl=angle \
-  --use-angle=gl \
-  --enable-features=VaapiVideoEncoder,VaapiVideoDecoder,WaylandWindowDecorations,WebRTCPipeWireCapturer,CanvasOopRasterization \
-  --enable-unsafe-webgpu \
   --ozone-platform-hint=auto \
+  --use-gl=angle \
+  --use-angle=gles \
+  --enable-features=VaapiVideoEncoder,VaapiVideoDecoder,WaylandWindowDecorations,WebRTCPipeWireCapturer,CanvasOopRasterization \
+  --enable-gpu-rasterization \
+  --enable-gpu-compositing \
+  --enable-accelerated-2d-canvas \
   --enable-accelerated-video-decode \
   --enable-zero-copy \
-  --enable-gpu-rasterization \
-  --enable-native-gpu-memory-buffers \
-  --ignore-gpu-blocklist \
+  --main-thread-compositing-priority \
+  --use-client-gmb-interface \
+  --back-forward-cache \
+  --canvas-oop-rasterization \
+  --memory-saver-multi-state-mode \
+  --ui-enable-shared-image-cache-for-gpu \
+  --use-gpu-scheduler-dfs \
   --enable-gpu-memory-buffer-compositor-resources \
   --enable-gpu-memory-buffer-video-frames \
-  --enable-accelerated-2d-canvas \
-  --enable-drdc \
-  --enable-gpu-compositing \
-  --disable-gpu-sandbox \
+  --enable-webrtc-hw-decoding \
+  --enable-webrtc-hw-encoding \
+  --enable-unsafe-webgpu \
+
+
+
+# Vulkan doesn't work right and skia graphite cannot be enabled
 
   #--vulkan \
+  #--use-angle=swiftshader \ 
   #--enable-skia-graphite \
   #--skia-graphite-backend=dawn \
   #--enable-vulkan-protected-memory \
   #--enable-features=Vulkan,SkiaRenderer,UseChromeOSDirectVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE \
-  #--enable-webrtc-hw-decoding --enable-webrtc-hw-encoding \
   #--use-vulkan=native \
-  #--enable-oop-rasterization \
+  #--ignore-gpu-blocklist \
   #--disable-gpu-driver-bug-workarounds \
 
 
