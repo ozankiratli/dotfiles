@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#export QT_QPA_PLATFORM=xcb && rstudio
-
 #export WAYLAND_DISPLAY=wayland-0 && \
 export XDG_SESSION_TYPE=wayland && \
 rstudio \
@@ -28,22 +26,43 @@ rstudio \
   --enable-webrtc-hw-encoding \
   --enable-unsafe-webgpu \
 
+  
+# Optional and alternative flags that do not cause issues
+
+  # --use-angle=gl \
+  # --ignore-gpu-blocklist \
+  # --disable-gpu-sandbox \
+  # --disable-gpu-driver-bug-workarounds \
 
 
-# Vulkan doesn't work right and skia graphite cannot be enabled
-
-  #--vulkan \
-  #--use-angle=swiftshader \ 
-  #--enable-skia-graphite \
-  #--skia-graphite-backend=dawn \
-  #--enable-vulkan-protected-memory \
-  #--enable-features=Vulkan,SkiaRenderer,UseChromeOSDirectVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE \
-  #--use-vulkan=native \
-  #--ignore-gpu-blocklist \
-  #--disable-gpu-driver-bug-workarounds \
+# Flags known to result in errors but RStudio still loads
+  
+  # --enable-native-gpu-memory-buffers \
 
 
-# Breaks the system
-# --enable-features=RawDraw
+# Direct Rendering Display Compositor cannot be enabled properly
 
-# Vulkan can be enabled on enable features but breaks terminal rendering
+  # --enable-drdc \ 
+  # --enable-features=DirectRenderingDisplayCompositor \
+
+
+# Vulkan can be enabled but doesn't work right, it throws a skia error that vulkan surface was not created, it breaks all other hardware accelaration 
+#
+
+  # --vulkan \
+  # --use-angle=swiftshader \ 
+  # --enable-vulkan-protected-memory \
+  # --enable-features=Vulkan,UseChromeOSDirectVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE \
+  # --use-vulkan=native \
+
+
+# Skia graphite cannot be enabled it throws a bunch of errors, overrides enabling vulkan and disables it. 
+
+  # --enable-features=SkiaGraphite \ #this
+  # --enable-skia-graphite \
+  # --skia-graphite-backend=dawn \
+
+
+# RawDraw Breaks the system
+  # --enable-features=RawDraw
+
