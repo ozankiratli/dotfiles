@@ -9,23 +9,12 @@ rstudio \
   --use-angle=gles \
   --enable-features=VaapiVideoEncoder,VaapiVideoDecoder,WaylandWindowDecorations,WebRTCPipeWireCapturer,CanvasOopRasterization \
   --enable-gpu-rasterization \
-  --enable-gpu-compositing \
   --enable-accelerated-2d-canvas \
-  --enable-accelerated-video-decode \
   --enable-zero-copy \
-  --main-thread-compositing-priority \
-  --use-client-gmb-interface \
-  --back-forward-cache \
-  --canvas-oop-rasterization \
-  --memory-saver-multi-state-mode \
-  --ui-enable-shared-image-cache-for-gpu \
-  --use-gpu-scheduler-dfs \
   --enable-gpu-memory-buffer-compositor-resources \
   --enable-gpu-memory-buffer-video-frames \
-  --enable-webrtc-hw-decoding \
-  --enable-webrtc-hw-encoding \
   --enable-unsafe-webgpu \
-
+  
   
 # Optional and alternative flags that do not cause issues
 
@@ -41,8 +30,7 @@ rstudio \
 
 
 # Direct Rendering Display Compositor cannot be enabled properly
-
-  # --enable-drdc \ 
+ 
   # --enable-features=DirectRenderingDisplayCompositor \
 
 
@@ -58,7 +46,7 @@ rstudio \
 
 # Skia graphite cannot be enabled it throws a bunch of errors, overrides enabling vulkan and disables it. 
 
-  # --enable-features=SkiaGraphite \ #this
+  # --enable-features=SkiaGraphite \ 
   # --enable-skia-graphite \
   # --skia-graphite-backend=dawn \
 
@@ -66,3 +54,18 @@ rstudio \
 # RawDraw Breaks the system
   # --enable-features=RawDraw
 
+
+# These flags are on the internet but I doubt they do anything, they might be just obsolete. I checked it against this extensive list that is being updated daily. https://peter.sh/experiments/chromium-command-line-switches/
+
+  # --enable-gpu-compositing \
+  # --enable-accelerated-video-decode \
+  # --main-thread-compositing-priority \
+  # --use-client-gmb-interface \
+  # --back-forward-cache \
+  # --memory-saver-multi-state-mode \
+  # --canvas-oop-rasterization \
+  # --ui-enable-shared-image-cache-for-gpu \
+  # --use-gpu-scheduler-dfs \
+  # --enable-webrtc-hw-decoding \
+  # --enable-webrtc-hw-encoding \
+  # --enable-drdc \
