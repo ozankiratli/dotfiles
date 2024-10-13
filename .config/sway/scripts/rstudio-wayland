@@ -14,14 +14,19 @@ rstudio \
   --enable-gpu-memory-buffer-compositor-resources \
   --enable-gpu-memory-buffer-video-frames \
   --enable-unsafe-webgpu \
+  --enable-drdc \
+  --back-forward-cache \
   
   
-# Optional and alternative flags that do not cause issues
+# Optional and alternative flags that do not cause issues not sure if they help
 
   # --use-angle=gl \
   # --ignore-gpu-blocklist \
   # --disable-gpu-sandbox \
   # --disable-gpu-driver-bug-workarounds \
+  # --main-thread-compositing-priority \
+  # --canvas-oop-rasterization \
+  # --ui-enable-shared-image-cache-for-gpu \
 
 
 # Flags known to result in errors but RStudio still loads
@@ -55,17 +60,12 @@ rstudio \
   # --enable-features=RawDraw
 
 
-# These flags are on the internet but I doubt they do anything, they might be just obsolete. I checked it against this extensive list that is being updated daily. https://peter.sh/experiments/chromium-command-line-switches/
+# These flags are on the internet but I doubt they do anything, they might be just obsolete. I checked it against this extensive list that is being updated regularly. https://peter.sh/experiments/chromium-command-line-switches/ and https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/about_flags.cc
 
   # --enable-gpu-compositing \
   # --enable-accelerated-video-decode \
-  # --main-thread-compositing-priority \
   # --use-client-gmb-interface \
-  # --back-forward-cache \
   # --memory-saver-multi-state-mode \
-  # --canvas-oop-rasterization \
-  # --ui-enable-shared-image-cache-for-gpu \
   # --use-gpu-scheduler-dfs \
   # --enable-webrtc-hw-decoding \
   # --enable-webrtc-hw-encoding \
-  # --enable-drdc \
