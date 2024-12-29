@@ -37,17 +37,13 @@ set number relativenumber
 set mouse=a
 set ttymouse=sgr
 
-
 set clipboard=unnamedplus
-
 set matchpairs+=<:>
 set formatoptions=1
 set autoindent
 set linebreak
 set wrap
 set noerrorbells
-set visualbell
-" set cursorline
 " set spell
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[0 q"
