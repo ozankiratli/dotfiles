@@ -1,12 +1,14 @@
 #!/bin/zsh
 
-export XDG_CURRENT_DESKTOP=GNOME
-#export _JAVA_AWT_WM_NOREPARENTING=1
+echo -e "Preparing the environment for starting SwayWM properly...\n" > /home/tholian/sway.log 
+
+
+export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORM=wayland
 #export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-export BEMENU_BACKEND=wayland
+export GTK_THEME='VALYRIAN-Molten-Steel'
+#export _JAVA_AWT_WM_NOREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
-#export GTK_THEME='VALYRIAN-Molten-Steel'
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
@@ -17,14 +19,47 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 export XDG_SCREENSHOTS_DIR="$HOME/Pictures"
 export XDG_CLOUD_DIR="$HOME/Nextcloud"
-export SSH_ASKPASS="/usr/lib/seahorse/ssh-askpass"
 export WLR_DRM_DEVICES=/dev/dri/card1
 export WLR_DRM_NO_MODIFIERS=1
 export WLR_NO_HARDWARE_CURSORS=1
 export WLR_RENDERER=gles2
 export WLR_DRM_NO_ATOMIC=1
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-source ~/.config/user-dirs.dirs > /home/tholian/sway.log 2>&1
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+export SSH_ASKPASS="/usr/lib/seahorse/ssh-askpass"
+
+
+echo "> XDG_CURRENT_DESKTOP is set to: $XDG_CURRENT_DESKTOP" >> /home/tholian/sway.log 
+echo "> QT_QPA_PLATFORM is set to: $QT_QPA_PLATFORM" >> /home/tholian/sway.log 
+echo "> QT_WAYLAND_DISABLE_WINDOWDECORATION is set to: $QT_WAYLAND_DISABLE_WINDOWDECORATION" >> /home/tholian/sway.log 
+echo "> GTK_THEME is set to: $GTK_THEME" >> /home/tholian/sway.log 
+echo "> _JAVA_AWT_WM_NOREPARENTING is set to: $_JAVA_AWT_WM_NOREPARENTING" >> /home/tholian/sway.log 
+echo "> MOZ_ENABLE_WAYLAND is set to: $MOZ_ENABLE_WAYLAND" >> /home/tholian/sway.log 
+echo "> XDG_DESKTOP_DIR is set to: $XDG_DESKTOP_DIR" >> /home/tholian/sway.log 
+echo "> XDG_DOWNLOAD_DIR is set to: $XDG_DOWNLOAD_DIR" >> /home/tholian/sway.log 
+echo "> XDG_TEMPLATES_DIR is set to: $XDG_TEMPLATES_DIR" >> /home/tholian/sway.log 
+echo "> XDG_PUBLICSHARE_DIR is set to: $XDG_PUBLICSHARE_DIR" >> /home/tholian/sway.log 
+echo "> XDG_DOCUMENTS_DIR is set to: $XDG_DOCUMENTS_DIR" >> /home/tholian/sway.log 
+echo "> XDG_MUSIC_DIR is set to: $XDG_MUSIC_DIR" >> /home/tholian/sway.log 
+echo "> XDG_PICTURES_DIR is set to: $XDG_PICTURES_DIR" >> /home/tholian/sway.log 
+echo "> XDG_VIDEOS_DIR is set to: $XDG_VIDEOS_DIR" >> /home/tholian/sway.log 
+echo "> XDG_SCREENSHOTS_DIR is set to: $XDG_SCREENSHOTS_DIR" >> /home/tholian/sway.log 
+echo "> XDG_CLOUD_DIR is set to: $XDG_CLOUD_DIR" >> /home/tholian/sway.log 
+echo "> WLR_DRM_DEVICES is set to: $WLR_DRM_DEVICES" >> /home/tholian/sway.log 
+echo "> WLR_DRM_NO_MODIFIERS is set to: $WLR_DRM_NO_MODIFIERS" >> /home/tholian/sway.log 
+echo "> WLR_NO_HARDWARE_CURSORS is set to: $WLR_NO_HARDWARE_CURSORS" >> /home/tholian/sway.log 
+echo "> WLR_RENDERER is set to: $WLR_RENDERER" >> /home/tholian/sway.log 
+echo "> WLR_DRM_NO_ATOMIC is set to: $WLR_DRM_NO_ATOMIC" >> /home/tholian/sway.log 
+echo "> SSH_AUTH_SOCK is set to: $SSH_AUTH_SOCK" >> /home/tholian/sway.log 
+echo "> SSH_ASKPASS is set to: $SSH_ASKPASS" >> /home/tholian/sway.log 
+
+source ~/.config/user-dirs.dirs >> /home/tholian/sway.log 2>&1
+
 sway --unsupported-gpu >> /home/tholian/sway.log 2>&1
 
+
+
+
+##### OLD SETTINGS
+
+#export BEMENU_BACKEND=wayland
+#echo "> BEMENU_BACKEND is set to: $BEMENU_BACKEND" >> /home/tholian/sway.log 

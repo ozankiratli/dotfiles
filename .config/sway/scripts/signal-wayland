@@ -1,3 +1,3 @@
 #!/bin/bash
 
-signal-desktop --use-tray-icon --ozone-platform-hint=auto --use-gl=angle --enable-features=VaapiVideoEncoder
+signal-desktop  --password-store="gnome-libsecret" --use-tray-icon --ozone-platform-hint=auto --use-gl=angle --enable-features=VaapiVideoEncoder

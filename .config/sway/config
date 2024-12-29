@@ -11,7 +11,8 @@ gaps outer 0
 
 # Setting menu etc
 set $term alacritty
-set $menu wofi --allow-images -S run 
+set $menu wofi -S run 
+set $dmenu wofi -S drun 
 
 # Set Wallpapers
 set $wpaperh wallpaper-h.jpg
@@ -29,7 +30,7 @@ set $monASUSext  'ASUSTek COMPUTER INC ASUS MB16AC R6LMTF239744'
 
 output $monMainScrn {
   scale 2
-  pos 640 1440 
+  pos 640 1440
   res 3840x2160
   bg $wpaperh stretch
   }
@@ -82,16 +83,15 @@ input "type:keyboard" {
 }
 
 # Startup Software
-# GNOME workaround
-exec_always --no-startup-id resetDunst
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec_always systemctl --user import-environment
+exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR XDG_SESSION_TYPE BEMENU_BACKEND PATH QT_QPA_PLATFORM SSH_ASKPASS SSH_AUTH_SOCK SWAYSOCK WINDOWID WLR_DRM_DEVICES WLR_DRM_NO_ATOMIC WLR_DRM_NO_MODIFIERS WLR_NO_HARDWARE_CURSORS WLR_RENDERER XCURSOR_SIZE X_CURSOR_THEME XDG_SEAT XDG_SESSION_ID 
 
-# Screen settings
-exec_always backlight
+exec_always --no-startup-id sleep 0.1s && resetDunst
+exec_always sleep 0.5s && backlight
 
 # Needed applet buttons
-exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
+exec --no-startup-id sleep 0.6s && blueman-applet
+exec --no-startup-id sleep 0.6s && nm-applet
 exec --no-startup-id sleep 10s && solaar -w hide -b solaar
 
 # COLORS AND THEME SETTINGS
@@ -139,7 +139,7 @@ set $workspace2 2: 
 set $workspace3 3: 
 # FileManager
 set $workspace4 4: 
-# Mendeley
+# Zotero
 set $workspace5 5: 
 # Writing
 set $workspace6 6:  
@@ -157,7 +157,7 @@ set $workspace12 12: 
 
 
 workspace $workspace1 output $monMainScrn 
-workspace $workspace1
+exec sleep 0.1s && swaymsg workspace $workspace1
 workspace $workspace2 output $monDell2415 $monASUSext
 workspace $workspace3 output $monMainScrn
 workspace $workspace4 output $monMainScrn 
@@ -202,25 +202,15 @@ assign [app_id="org.inkscape.Inkscape"] $workspace10
 assign [app_id="com.github.xournalpp.xournalpp"] "WHITEBOARD"
 assign [app_id="mpv"] "YOUTUBE"
 
-set $opacity 0.9
+set $opacity 0.95
 for_window [app_id="RStudio"] opacity $opacity
 
-
-
-set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     export MOZ_ENABLE_WAYLAND=1
     export GTK_THEME='VALYRIAN-Molten-Steel'
-    gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
-    gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
-    gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
-    #gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
-    gsettings set $gnome-schema cursor-theme 'Maya-Orange'
-    gsettings set $gnome-schema font-name 'Source Sans Pro 10'
  }
 
-#seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24
 seat seat0 xcursor_theme 'Maya-Orange' 24
 
 # PROGRAMS TO RUN
@@ -229,19 +219,19 @@ seat seat0 xcursor_theme 'Maya-Orange' 24
 exec firefox
 exec zotero
 exec nemo
-exec alacritty
+exec sleep 0.2s && alacritty
 exec rstudio-wayland
-workspace $workspace7
-workspace $workspace1
+exec sleep 0.1s && swaymsg workspace $workspace7
+exec sleep 0.1s && swaymsg workspace $workspace1
+#workspace $workspace1
 
+exec sleep 1s  && protonmail-bridge --no-window
+##exec sleep 1s && protonmail-bridge-core -n
 
-exec sleep 1s && protonmail-bridge --no-window
-exec sleep 5s && nextcloud
+exec sleep 5s  && nextcloud
 exec sleep 10s && thunderbird
 exec sleep 11s && signal-wayland
 exec sleep 12s && element-wayland
-
-
 
 #KEYBINDINGS
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -252,9 +242,11 @@ bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+q kill
+bindsym $mod+Shift+q exec sway-kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $dmenu
+bindsym $mod+Shift+d exec $menu
 
 # change focus
 bindsym $mod+j focus left
@@ -445,6 +437,8 @@ bindsym Control+Shift+Print exec grimshot --notify copy area ~/Pictures/grimshot
 
 #exec_always export $(envsubst < /home/tholian/.env)
 
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Power settings
 #exec --no-startup-id indicator-cpufreq
 #exec --no-startup-id powertop --auto-tune
@@ -456,3 +450,16 @@ bindsym Control+Shift+Print exec grimshot --notify copy area ~/Pictures/grimshot
 #exec nautilus
 #exec xournal
 #exec alacritty
+
+
+#set $gnome-schema org.gnome.desktop.interfacep
+#exec_always {
+    #gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
+    #gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
+    #gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
+    #gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
+    #gsettings set $gnome-schema cursor-theme 'Maya-Orange'
+    #gsettings set $gnome-schema font-name 'Source Sans Pro 10'
+ #}
+
+#seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24

@@ -1,5 +1,5 @@
 # dynamic_title = true
-live_config_reload = true
+general.live_config_reload = true
 # render_timer = false
 # tabspaces = 2
 

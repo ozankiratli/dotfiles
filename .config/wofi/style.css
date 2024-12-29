@@ -10,66 +10,87 @@
     1px -1px 0px #030303,
     -1px 1px 0px #030303,
     1px 1px 0px #030303    ;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   transition: 0.3s ease;
+  color: #DFDFDF;
+  /*background-color: transparent;*/
 }
 
 
-#input {
-  border: none;
-  border-color: cadetblue;
-  color: #f57900;
-  background-color: #0e2946;
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 15px;
-}
-
-#text {
-  margin-left: 1em;
-  color: #cc6600;
-}
 
 #window {
+  background-color: rgba(0,20,40,0.8);
   opacity: 0.97;
-  border: 2px solid #2e3440;
-  background-color: #000E1A;
+  border-radius: 20px;
+  border: 2px solid #a50;
   color: #bbbbbb;
 }
 
-#inner-box {
-  margin: 10px;
+#window #outer-box {
+  margin: 7px 7px -9px 7px;
+  border: none;
+  background-color: transparent;
+}
+ 
+#window #outer-box #input {
+  border: 1px solid transparent;
+  color: #a50;
+  background-color: #0e2946;
+  padding: 5px;
+  /*margin-bottom: 5px;*/
+  border-radius: 15px;
+}
+
+#window #outer-box #input:focus, #window #outer-box #input:focus-visible, #window #outer-box #input:active {
+  border: 1px solid #f57900;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: #f57900;
+}
+
+#window #outer-box #scroll {
+  padding: 4px 7px 12px 7px;
+  margin-bottom: 0px;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+#window #outer-box #scroll #inner-box {
   border: none;
   background-color: #0e2946;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
-#outer-box {
-  margin: 5px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 0;
-}
-
-#entry {
+#window #outer-box #scroll #inner-box #entry {
   background-color: #0e2946;
-  border-width: 1px;
+  border: 1px solid transparent;
+  margin: 3px 5px 3px 3px;
 }
 
-
-#entry:selected {
-  background-color: #052b0f;
-  outline: none;
-}
-
-#selected {
+#window #outer-box #scroll #inner-box #entry:selected {
   background-color: #226633;
   outline: none;
   border-radius: 10px;
-  border-color: #043011;
-  border-style: solid;
-  border-width: 0px;
-  box-shadow: 1px 1px 2px rgba(30,200,200,0.4);
+  border: 1px solid #00aa44 ;
+  box-shadow: 3px 3px 3px #030303;
 }
 
+#window #outer-box #scroll #inner-box #entry #expander-box {
+  background-color: #0e2946;
+  border-style: solid;
+}
+
+#window #outer-box #scroll #inner-box #entry #img {
+  box-shadow: 2px 2px 2px #030303; 
+  background: rgba(0,20,40,0.6); 
+  margin: 3px;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+#window #outer-box #scroll #inner-box #entry #text {
+  margin-left: 15px;
+  color: #cc6600;
+  font-size: 28;
+}
 

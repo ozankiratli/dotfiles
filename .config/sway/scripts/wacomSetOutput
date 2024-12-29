@@ -16,12 +16,18 @@ CURRENT_WACOM_OUTPUT=`cat $HOME/.config/sway/scripts/wacomSetOutput.d/currentOut
 echo "Wacom Tablet is currently mapped to: $CURRENT_WACOM_OUTPUT"
 echo ""
 
-CONNECTED_MONITORS=`swaymsg -p -t get_outputs | grep Output | sed 's/(focused)//' | sed 's/Output//' | awk '{print $1}'`
+#CONNECTED_MONITORS=`swaymsg -p -t get_outputs | grep Output | sed 's/(focused)//' | sed 's/Output//' | awk '{print $1}'`
+IFS=$'\n'
+CONNECTED_MONITORS=(`swaymsg -r -t get_outputs | grep "name" | sed 's/[,"]//g' | sed 's/name://' | sed -re 's/^[[:blank:]]+|[[:blank:]]+$//g' -e 's/[[:blank:]]+/ /g' `)
+MONITOR_MAKE=(`swaymsg -r -t get_outputs | grep "make" | sed 's/[,"]//g' | sed 's/make://' | sed -re 's/^[[:blank:]]+|[[:blank:]]+$//g' -e 's/[[:blank:]]+/ /g'`)
+MONITOR_MODEL=(`swaymsg -r -t get_outputs | grep "model" | sed 's/[,"]//g' | sed 's/model://' | sed -re 's/^[[:blank:]]+|[[:blank:]]+$//g' -e 's/[[:blank:]]+/ /g'`)
 COUNTER=0
 echo "Connected monitors are:"
-for monitor in $CONNECTED_MONITORS ; do
+for monitor in "${CONNECTED_MONITORS[@]}" ; do
+  monmake=${MONITOR_MAKE[$COUNTER]}
+  monmodel=${MONITOR_MODEL[$COUNTER]}
   COUNTER=$(( COUNTER + 1 ))
-  echo "   "$COUNTER")" $monitor
+  echo -e "   "$COUNTER") "$monitor' \t : '$monmake' \t'$monmodel
 done
 echo ""
 
@@ -32,17 +38,17 @@ while true; do
   elif [ "$MONITOR_ID" -gt "$COUNTER" ] || [ "$MONITOR_ID" -lt "1" ] ; then
     echo "The monitor ID you entered ($MONITOR_ID) is out of bounds. Available values are 1 to $COUNTER. Try again..."
   else
-    WACOM_SCREEN=`echo $CONNECTED_MONITORS | awk -v ID=$MONITOR_ID '{print $ID}'`
+    WACOM_SCREEN=${CONNECTED_MONITORS[$(( MONITOR_ID - 1 ))]}
     echo "You selected: "$WACOM_SCREEN
     while true; do
       read -p "Continue [Y/n]" yn
       case "${yn}" in
 	"" | [Yy] | [Yy][Ee][Ss] )
 	  echo "Remapping Wacom Devices..."
-	  for device in $CONNECTED_WACOM_DEVICES ; do
-	    echo "swaymsg input $device map_to_output $WACOM_SCREEN"
-	    swaymsg input $device map_to_output $WACOM_SCREEN
-	  done
+	  #for device in $CONNECTED_WACOM_DEVICES ; do
+	  #  echo "swaymsg input $device map_to_output $WACOM_SCREEN"
+	  #  swaymsg input $device map_to_output $WACOM_SCREEN
+	  #done
 	  echo $WACOM_SCREEN > $HOME/.config/sway/scripts/wacomSetOutput.d/currentOutput.out
 	  exit 1
 	  ;;
