@@ -32,7 +32,6 @@ COMPLETION_WAITING_DOTS="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -78,11 +77,10 @@ fi
 
 source ~/.config/user-dirs.dirs
 
-# Start ssh-agent
-#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#    eval "$(ssh-agent -s)" > /dev/null
-#fi
-
-#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+
+# # # # # # UNCOMMENT IF NEEDED # # # # # # #
+
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+#export SSH_ASKPASS=/usr/lib/seahorse/ssh-askpass
