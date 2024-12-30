@@ -132,7 +132,7 @@ set $white			#DDDDDD
 # window colors
 #			border		background	text		indicator	child_border
 client.focused		$darknightblue 	$darknightblue	$orange		$teal		$gray
-client.unfocused	$darknightblue	$navydarkdark	$bluegray	$teal		$darkgray
+client.unfocused	$darknightblue	$navydark	$bluegray	$teal		$darkgray
 client.focused_inactive	$darknightblue 	$darknightblue	$white		$teal		$darkgray
 client.urgent		$darkred	$darkaqua	$orange		$teal		$brightorange
 client.placeholder      $darknightblue	$darknightblue	$orange		$teal		$darkgray
