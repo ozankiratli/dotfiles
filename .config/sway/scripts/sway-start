@@ -7,6 +7,8 @@ export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORM=wayland
 #export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 export GTK_THEME='VALYRIAN-Molten-Steel'
+export XDG_CURSOR_THEME='Maya-Orange'
+export XDG_CURSOR_SIZE=24
 #export _JAVA_AWT_WM_NOREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
 export XDG_DESKTOP_DIR="$HOME/Desktop"
@@ -32,6 +34,8 @@ echo "> XDG_CURRENT_DESKTOP is set to: $XDG_CURRENT_DESKTOP" >> /home/tholian/sw
 echo "> QT_QPA_PLATFORM is set to: $QT_QPA_PLATFORM" >> /home/tholian/sway.log 
 echo "> QT_WAYLAND_DISABLE_WINDOWDECORATION is set to: $QT_WAYLAND_DISABLE_WINDOWDECORATION" >> /home/tholian/sway.log 
 echo "> GTK_THEME is set to: $GTK_THEME" >> /home/tholian/sway.log 
+echo "> XDG_CURSOR_THEME is set to: $XDG_CURSOR_THEME" >> /home/tholian/sway.log 
+echo "> XDG_CURSOR_SIZE is set to: $XDG_CURSOR_SIZE" >> /home/tholian/sway.log 
 echo "> _JAVA_AWT_WM_NOREPARENTING is set to: $_JAVA_AWT_WM_NOREPARENTING" >> /home/tholian/sway.log 
 echo "> MOZ_ENABLE_WAYLAND is set to: $MOZ_ENABLE_WAYLAND" >> /home/tholian/sway.log 
 echo "> XDG_DESKTOP_DIR is set to: $XDG_DESKTOP_DIR" >> /home/tholian/sway.log 
@@ -52,7 +56,11 @@ echo "> WLR_DRM_NO_ATOMIC is set to: $WLR_DRM_NO_ATOMIC" >> /home/tholian/sway.l
 echo "> SSH_AUTH_SOCK is set to: $SSH_AUTH_SOCK" >> /home/tholian/sway.log 
 echo "> SSH_ASKPASS is set to: $SSH_ASKPASS" >> /home/tholian/sway.log 
 
+echo -e "\n"
+
 source ~/.config/user-dirs.dirs >> /home/tholian/sway.log 2>&1
+
+dbus-update-activation-environment XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR PATH QT_QPA_PLATFORM SSH_ASKPASS SSH_AUTH_SOCK SWAYSOCK WINDOWID WLR_DRM_DEVICES WLR_DRM_NO_ATOMIC WLR_DRM_NO_MODIFIERS WLR_NO_HARDWARE_CURSORS WLR_RENDERER XCURSOR_SIZE X_CURSOR_THEME 2>&1
 
 sway --unsupported-gpu >> /home/tholian/sway.log 2>&1
 

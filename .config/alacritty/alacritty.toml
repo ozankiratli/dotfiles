@@ -17,8 +17,8 @@ white = "#ffffff"
 yellow = "#edc809"
 
 [colors.cursor]
-cursor = "#4c4c4c"
-text = "#fefff2"
+cursor = "#dddddd"
+text = "#222222"
 
 [colors.normal]
 black = "#000000"
@@ -31,16 +31,18 @@ white = "#bbbbbb"
 yellow = "#ffe50a"
 
 [colors.primary]
-background = "#000e1a"
+background = "#0E1B28"
 foreground = "#dddddd"
 
 [colors.selection]
-background = "#18354f"
-text = "#f5f5f5"
+background = "#263e58"
+text = "#F57900"
 
 [cursor]
-style = "Block"
+style = { shape = "Beam" , blinking = "On" }
 unfocused_hollow = true
+blink_timeout = 15
+vi_mode_style = { shape = "Block" , blinking ="Off" }
 
 [font]
 size =  12

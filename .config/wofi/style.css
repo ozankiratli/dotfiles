@@ -19,7 +19,7 @@
 
 
 #window {
-  background-color: rgba(0,20,40,0.8);
+  background-color: rgba(11,24,35,0.8);
   opacity: 0.97;
   border-radius: 20px;
   border: 2px solid #a50;
@@ -35,14 +35,14 @@
 #window #outer-box #input {
   border: 1px solid transparent;
   color: #a50;
-  background-color: #0e2946;
+  background-color: #12293F;
   padding: 5px;
   /*margin-bottom: 5px;*/
   border-radius: 15px;
 }
 
 #window #outer-box #input:focus, #window #outer-box #input:focus-visible, #window #outer-box #input:active {
-  border: 1px solid #f57900;
+  border: 1px solid #BF562F;
   outline: 2px solid transparent;
   outline-offset: 2px;
   color: #f57900;
@@ -57,21 +57,21 @@
 
 #window #outer-box #scroll #inner-box {
   border: none;
-  background-color: #0e2946;
+  background-color: #12293F;
   border-radius: 15px;
 }
 
 #window #outer-box #scroll #inner-box #entry {
-  background-color: #0e2946;
+  background-color: #12293F;
   border: 1px solid transparent;
   margin: 3px 5px 3px 3px;
 }
 
 #window #outer-box #scroll #inner-box #entry:selected {
-  background-color: #226633;
+  background-color: #005025;
   outline: none;
   border-radius: 10px;
-  border: 1px solid #00aa44 ;
+  border: 1px solid #007050 ;
   box-shadow: 3px 3px 3px #030303;
 }
 
@@ -82,7 +82,7 @@
 
 #window #outer-box #scroll #inner-box #entry #img {
   box-shadow: 2px 2px 2px #030303; 
-  background: rgba(0,20,40,0.6); 
+  background: rgba(0,37,80,0.6); 
   margin: 3px;
   padding: 4px;
   border-radius: 6px;
@@ -90,7 +90,7 @@
 
 #window #outer-box #scroll #inner-box #entry #text {
   margin-left: 15px;
-  color: #cc6600;
+  color: #F57900;
   font-size: 28;
 }
 

@@ -1,3 +1,24 @@
+/*
+ * COLORS
+ * $black 			#000000
+ * $deepnightblue		#0E1B28
+ * $darknightblue		#0B1823
+ * $navy			#263E58
+ * $orange			#F57900
+ * $brightorange 		#FB781F
+ * $darkorange 			#BF562F
+ * $bluegray			#748fa3
+ * $darkred			#751919
+ * $darkgreen 			#005025
+ * $darkaqua 			#199DB9
+ * $teal			#00AAAA
+ * $gray			#595959
+ * $darkgray			#292929
+ * $shadegray 			#030303
+ * $white			#FFFFFF
+ *
+*/
+
 * {
     border: none;
     border-radius: 0;
@@ -55,10 +76,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-    background: rgb(0, 100, 50);
-    border-right: 2px solid rgb(0, 100, 50);
-    border-left: 2px solid rgb(0, 100, 50);
-    border-bottom: 3px solid #C24600;
+    background: rgb(0, 80, 37);
+    border-right: 2px solid rgb(0, 80, 37);
+    border-left: 2px solid rgb(0, 80, 37);
+    border-bottom: 3px solid #BF562F;
 }
 
 #workspaces button.urgent {

@@ -84,40 +84,58 @@ input "type:keyboard" {
 
 # Startup Software
 #exec_always systemctl --user import-environment
-exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR XDG_SESSION_TYPE BEMENU_BACKEND PATH QT_QPA_PLATFORM SSH_ASKPASS SSH_AUTH_SOCK SWAYSOCK WINDOWID WLR_DRM_DEVICES WLR_DRM_NO_ATOMIC WLR_DRM_NO_MODIFIERS WLR_NO_HARDWARE_CURSORS WLR_RENDERER XCURSOR_SIZE X_CURSOR_THEME XDG_SEAT XDG_SESSION_ID 
 
-exec_always --no-startup-id sleep 0.1s && resetDunst
-exec_always sleep 0.5s && backlight
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
+    gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
+    gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
+    gsettings set $gnome-schema cursor-theme 'Maya-Orange'
+    gsettings set $gnome-schema font-name 'Noto Sans, 10'
+    gsettings set $gnome-schema color-scheme 'prefer-dark'
+}
+
+seat seat0 xcursor_theme 'Maya-Orange' 24
+
+exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_SESSION_TYPE PATH SWAYSOCK XDG_SEAT XDG_SESSION_ID 
+
+exec_always --no-startup-id sleep 1s && resetDunst
+exec_always sleep 1.5s && backlight
 
 # Needed applet buttons
-exec --no-startup-id sleep 0.6s && blueman-applet
-exec --no-startup-id sleep 0.6s && nm-applet
-exec --no-startup-id sleep 10s && solaar -w hide -b solaar
+exec --no-startup-id sleep 1.6s && blueman-applet
+exec --no-startup-id sleep 1.6s && nm-applet
+exec --no-startup-id sleep 1.8s && solaar -w hide -b solaar
 
 # COLORS AND THEME SETTINGS
 # Color Definitions
 set $black 			#000000
-set $deepnightblue		#001D29
-set $darknightblue		#001219
+set $deepnightblue		#0E1B28
+set $darknightblue		#0B1823
+set $navydark 			#12293F
 set $navy			#263E58
+set $navylight 			#335577
 set $orange			#F57900
-set $bright-orange 		#FB781F
-set $dark-orange		#C24600
-set $blue-gray			#748fa3
+set $brightorange 		#FB781F
+set $darkorange			#BF562F
+set $bluegraydark 		#334250
+set $lighternavy 		#004f81
+set $bluegray			#c8dbe0
 set $darkred			#751919
+set $darkgreen                  #005025
 set $darkaqua			#199DB9
 set $teal			#00AAAA
 set $gray			#595959
-set $dark-gray			#292929
-set $white			#FFFFFF
+set $darkgray			#292929
+set $white			#DDDDDD
 
 # window colors
 #			border		background	text		indicator	child_border
-client.focused		$blue-gray	$darknightblue	$orange		$teal		$gray
-client.unfocused	$blue-gray	$navy		$blue-gray	$teal		$dark-gray
-client.focused_inactive	$blue-gray	$darknightblue	$white		$teal		$dark-gray
-client.urgent		$darkred	$darkaqua	$orange		$teal		$bright-orange
-client.placeholder      $blue-gray	$darknightblue	$orange		$teal		$dark-gray
+client.focused		$darknightblue 	$darknightblue	$orange		$teal		$gray
+client.unfocused	$darknightblue	$navydarkdark	$bluegray	$teal		$darkgray
+client.focused_inactive	$darknightblue 	$darknightblue	$white		$teal		$darkgray
+client.urgent		$darkred	$darkaqua	$orange		$teal		$brightorange
+client.placeholder      $darknightblue	$darknightblue	$orange		$teal		$darkgray
 client.background       $darknightblue
 
 
@@ -183,6 +201,7 @@ assign [app_id="Alacritty"] $workspace1
 assign [app_id="firefox"]  $workspace2
 assign [app_id="thunderbird"]  $workspace3
 assign [app_id="nemo"]  $workspace4
+assign [app_id="7zFM"]  $workspace4
 assign [app_id="Zotero"]  $workspace5
 assign [app_id="calibre-gui"] $workspace6
 assign [app_id="libreoffice-writer"]  $workspace6
@@ -206,26 +225,20 @@ set $opacity 0.95
 for_window [app_id="RStudio"] opacity $opacity
 
 
-exec_always {
-    export MOZ_ENABLE_WAYLAND=1
-    export GTK_THEME='VALYRIAN-Molten-Steel'
- }
-
-seat seat0 xcursor_theme 'Maya-Orange' 24
 
 # PROGRAMS TO RUN
 
 # Software on Startup
-exec firefox
-exec zotero
-exec nemo
-exec sleep 0.2s && alacritty
-exec rstudio-wayland
-exec sleep 0.1s && swaymsg workspace $workspace7
-exec sleep 0.1s && swaymsg workspace $workspace1
+exec sleep 2s && firefox
+exec sleep 2s && zotero
+exec sleep 2s && nemo
+exec sleep 2.2s && alacritty
+exec sleep 2s && rstudio-wayland
+exec sleep 2.1s && swaymsg workspace $workspace7
+exec sleep 2.1s && swaymsg workspace $workspace1
 #workspace $workspace1
 
-exec sleep 1s  && protonmail-bridge --no-window
+exec sleep 3s  && protonmail-bridge --no-window
 ##exec sleep 1s && protonmail-bridge-core -n
 
 exec sleep 5s  && nextcloud
@@ -395,6 +408,10 @@ bindsym Control+Print exec grimshot --notify copy screen ~/Pictures/grimshot-$(d
 bindsym Control+Shift+Print exec grimshot --notify copy area ~/Pictures/grimshot-$(date +'%Y-%m-%d_%H-%M-%S.%2N').png
 
 
+# Firefox Color Settings can be recovered
+# https://color.firefox.com/?theme=XQAAAAKdAwAAAAAAAABBqYhm849SCicxcUV4gCuG_ebZUZXOFqkOWlZ8x5ymjzPFyeOny7qEHzzR61cDqxVoTWW-ouMYxr_lgo78zyWcceZ6-1954aAIV2PzwCAl81wdR3113I-ImRH-SBemW-_yUxwHs4MPgcwAdA4D_fZKR6oSFsUrkrmtN9cynycNLrcKR-BCsobDhpnmsKtf8KA_lAx8LYfYY-hq-qFSLgQ15eDAs-b9vPmY8U3GrV7qSkBW8O0Wyj4tIA-S3gxoWlPuh8JPylwB_-h5iAgMnxmL6t8DoZmtDiL44n639pTPfm4bNut-Nl6jVFUHIHDJInDhjR0pxRhF2_2mlx2Rz3Y97lrywZKIpu8yBwmj-cVIE5fV1DeCXwLwWE9qP7Ll_5tRkxgPWfrU2O7u0J9Y67xfqobSz7B3LpRSEOvYNuCsNEw-rXmbHiMlBYqoXK1k4vTzaZNiOLaLtQUkpwCGE1HxkHywd3zj3OHlJjQwTUkGcj5M3xEXu8fWrCB-ufei6BOX_zo5wBYU9RfNihKl2pT_ydNOkg
+
+
 # OLD SETTINGS
 
 # smart_gaps off 
@@ -451,15 +468,11 @@ bindsym Control+Shift+Print exec grimshot --notify copy area ~/Pictures/grimshot
 #exec xournal
 #exec alacritty
 
-
-#set $gnome-schema org.gnome.desktop.interfacep
 #exec_always {
-    #gsettings set $gnome-schema gtk-theme 'VALYRIAN-Molten-Steel'
-    #gsettings set org.gnome.desktop.wm.preferences theme 'VALYRIAN-Molten-Steel' 
-    #gsettings set $gnome-schema icon-theme 'Vimix-Black-dark'
-    #gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
-    #gsettings set $gnome-schema cursor-theme 'Maya-Orange'
-    #gsettings set $gnome-schema font-name 'Source Sans Pro 10'
- #}
+#    export MOZ_ENABLE_WAYLAND=1
+#    export GTK_THEME='VALYRIAN-Molten-Steel'
+#    gsettings set $gnome-schema cursor-theme 'Oxygen-Vibrant-Orange'
+# }
+
 
 #seat seat0 xcursor_theme 'Oxygen-Vibrant-Orange' 24
