@@ -23,7 +23,6 @@ Plugin 'AndrewRadev/tagalong.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'davidhalter/jedi-vim'
 call vundle#end()            " required
-
 filetype plugin indent on    " required
 
 if has("syntax")
@@ -46,19 +45,22 @@ set wrap
 set noerrorbells
 " set spell
 
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-let &t_SR = "\e[2 q"
+let &t_EI = "\e[2 q"  	" Block cursor in NORMAL mode
+let &t_SI = "\e[6 q" 	" Beam cursor in INSERT mode
+let &t_SR = "\e[2 q" 	" Block cursor in REPLACE mode
+
+" Recover blinking cursor on quit
+autocmd VimLeave * silent !echo -ne "\e[5;6 q"  
 
 set sw=2
 set iskeyword+=:
 
 " Autocomplete
 set wildmode=longest,list,full
-set completeopt+=menuone
+set completeopt+=menuone 
 set completeopt+=longest,menuone,noselect
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " Add only if Vim beeps during completion
+set shortmess+=c   	" Shut off completion messages
+set belloff+=ctrlg 	" Add only if Vim beeps during completion
 
 set showmode
 set showcmd		" Show (partial) command in status line.
