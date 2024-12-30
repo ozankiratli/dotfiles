@@ -1,12 +1,8 @@
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
-# Any customization should be done in ~/.gtkrc-2.0.mine instead.
-
-include "/home/tholian/.gtkrc-2.0.mine"
 gtk-theme-name="VALYRIAN-Molten-Steel"
 gtk-icon-theme-name="Vimix-Black-dark"
-gtk-font-name="Source Sans Pro 10"
-gtk-cursor-theme-name="Oxygen-Vibrant-Orange"
-gtk-cursor-theme-size=0
+gtk-font-name="Noto Sans 11"
+gtk-cursor-theme-name="Maya-Orange"
+gtk-cursor-theme-size=24
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
 gtk-button-images=1

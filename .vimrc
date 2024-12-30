@@ -45,8 +45,10 @@ set linebreak
 set wrap
 set noerrorbells
 " set spell
+
 let &t_SI = "\e[6 q"
-let &t_EI = "\e[0 q"
+let &t_EI = "\e[2 q"
+let &t_SR = "\e[2 q"
 
 set sw=2
 set iskeyword+=:
